@@ -9,6 +9,6 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to PARKWISE Application!");
+        welcomeText.setText("Welcome to PARKWISE Group project Application!");
     }
 }
