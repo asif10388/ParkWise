@@ -1,6 +1,6 @@
 package csc305.parkwise.Ruhi.ParkVisitor;
 
-public class PvDashboard
+public class PVDashboardController
 {
     @javafx.fxml.FXML
     public void initialize() {

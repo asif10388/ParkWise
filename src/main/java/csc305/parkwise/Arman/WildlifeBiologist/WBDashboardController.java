@@ -1,6 +1,6 @@
 package csc305.parkwise.Arman.WildlifeBiologist;
 
-public class WbDashboard
+public class WBDashboardController
 {
     @javafx.fxml.FXML
     public void initialize() {

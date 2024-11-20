@@ -1,6 +1,6 @@
 package csc305.parkwise.Rifah.EducationalGroupLeader;
 
-public class EglDashboard
+public class EGLDashboardController
 {
     @javafx.fxml.FXML
     public void initialize() {

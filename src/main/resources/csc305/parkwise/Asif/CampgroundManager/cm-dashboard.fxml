@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc305.parkwise.Asif.CampgroundManager.CmDashboard"
+            fx:controller="csc305.parkwise.Asif.CampgroundManager.CMDashboardController"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>

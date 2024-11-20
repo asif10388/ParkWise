@@ -1,6 +1,6 @@
 package csc305.parkwise.Ruhi.ParkRanger;
 
-public class PrDashboard
+public class PRDashboardController
 {
     @javafx.fxml.FXML
     public void initialize() {
