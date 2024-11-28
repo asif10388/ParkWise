@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
@@ -21,10 +23,18 @@
          </children>
       </HBox>
       <ComboBox layoutX="138.0" layoutY="119.0" onAction="#AnimalSpeciesComboboxOnAction" prefWidth="150.0" />
-      <TextField layoutX="138.0" layoutY="175.0" onAction="#EventTimeTextFieldOnAction" />
+      <TextField layoutX="138.0" layoutY="175.0" onAction="#EventTimeTextFieldOnAction">
+         <effect>
+            <Reflection />
+         </effect>
+      </TextField>
       <ComboBox layoutX="417.0" layoutY="119.0" onAction="#AnimalBehaviorComboBoxOnAction" prefWidth="150.0" />
-      <TextField layoutX="42.0" layoutY="259.0" onAction="#AdditionalRecordOnAction" prefHeight="90.0" prefWidth="268.0" />
-      <Button layoutX="492.0" layoutY="322.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
+      <TextField layoutX="43.0" layoutY="259.0" onAction="#AdditionalRecordOnAction" prefHeight="81.0" prefWidth="268.0">
+         <effect>
+            <Blend />
+         </effect>
+      </TextField>
+      <Button layoutX="492.0" layoutY="314.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
