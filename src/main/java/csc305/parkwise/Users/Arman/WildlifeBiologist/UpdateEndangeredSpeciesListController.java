@@ -1,8 +1,7 @@
-package csc305.parkwise.Users.Arman.TourGuide;
+package csc305.parkwise.Users.Arman.WildlifeBiologist;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.scene.control.Label;
 
 public class UpdateEndangeredSpeciesListController {
 

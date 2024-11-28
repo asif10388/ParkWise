@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="358.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.UpdateEndangeredSpeciesListController">
+<AnchorPane prefHeight="358.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.UpdateEndangeredSpeciesListController">
    <children>
       <VBox alignment="CENTER_LEFT" centerShape="false" layoutY="28.0" prefHeight="46.0" prefWidth="584.0" style="-fx-background-color: #285430;">
          <children>

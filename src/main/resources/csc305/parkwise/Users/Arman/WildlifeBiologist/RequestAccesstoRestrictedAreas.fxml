@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.RequestAccesstoRestrictedAreasController">
+<AnchorPane prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.RequestAccesstoRestrictedAreasController">
    <children>
       <HBox alignment="CENTER" layoutY="30.0" prefHeight="35.0" prefWidth="600.0" style="-fx-background-color: #285430;">
          <children>
