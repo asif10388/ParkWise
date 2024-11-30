@@ -2,16 +2,17 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="381.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.RecordandAnalyzeAnimalBehaviorController">
+<AnchorPane prefHeight="475.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.RecordandAnalyzeAnimalBehaviorController">
    <children>
       <HBox alignment="CENTER" layoutY="34.0" prefHeight="46.0" prefWidth="602.0" style="-fx-background-color: #285430;">
          <children>
@@ -22,39 +23,39 @@
             </Label>
          </children>
       </HBox>
-      <ComboBox layoutX="138.0" layoutY="119.0" onAction="#AnimalSpeciesComboboxOnAction" prefWidth="150.0" />
-      <TextField layoutX="138.0" layoutY="175.0" onAction="#EventTimeTextFieldOnAction">
-         <effect>
-            <Reflection />
-         </effect>
-      </TextField>
-      <ComboBox layoutX="417.0" layoutY="119.0" onAction="#AnimalBehaviorComboBoxOnAction" prefWidth="150.0" />
-      <TextField layoutX="43.0" layoutY="259.0" onAction="#AdditionalRecordOnAction" prefHeight="81.0" prefWidth="268.0">
+      <ComboBox layoutX="130.0" layoutY="97.0" onAction="#AnimalSpeciesComboboxOnAction" prefWidth="150.0" />
+      <TextField layoutX="119.0" layoutY="145.0" onAction="#EventTimeTextFieldOnAction" prefHeight="26.0" prefWidth="162.0">
          <effect>
             <Blend />
          </effect>
       </TextField>
-      <Button layoutX="492.0" layoutY="314.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
+      <ComboBox layoutX="420.0" layoutY="97.0" onAction="#AnimalBehaviorComboBoxOnAction" prefWidth="150.0" />
+      <TextField layoutX="319.0" layoutY="166.0" onAction="#AdditionalRecordOnAction" prefHeight="38.0" prefWidth="250.0">
+         <effect>
+            <Blend />
+         </effect>
+      </TextField>
+      <Button layoutX="506.0" layoutY="217.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="40.0" layoutY="123.0" text="Animal Species:">
+      <Label layoutX="32.0" layoutY="101.0" text="Animal Species:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="40.0" layoutY="179.0" text="Event Time:">
+      <Label layoutX="32.0" layoutY="149.0" text="Event Time:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="316.0" layoutY="123.0" text="Animal Behavior:">
+      <Label layoutX="319.0" layoutY="101.0" text="Animal Behavior:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="232.0" text="Additional Notes on Behavior:">
+      <Label layoutX="319.0" layoutY="141.0" text="Additional Notes on Behavior:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -64,5 +65,21 @@
             <Font size="19.0" />
          </font>
       </Label>
+      <DatePicker layoutX="98.0" layoutY="195.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="180.0" />
+      <Label layoutX="32.0" layoutY="199.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView layoutX="24.0" layoutY="254.0" prefHeight="206.0" prefWidth="554.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Record ID" />
+          <TableColumn prefWidth="101.59998321533203" text="Animal Species" />
+            <TableColumn prefWidth="89.5999755859375" text="Action Type" />
+            <TableColumn prefWidth="89.5999755859375" text="Location" />
+            <TableColumn prefWidth="89.5999755859375" text="Event Time" />
+            <TableColumn prefWidth="108.0000061035156" text="Additional notes" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

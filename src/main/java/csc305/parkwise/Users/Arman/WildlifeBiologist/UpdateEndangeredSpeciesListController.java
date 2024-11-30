@@ -24,4 +24,12 @@ public class UpdateEndangeredSpeciesListController {
     @javafx.fxml.FXML
     public void BackButtonOnMouseClick(Event event) {
     }
+
+    @javafx.fxml.FXML
+    public void DateDatePickerOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void TimeTextfieldOnAction(ActionEvent actionEvent) {
+    }
 }

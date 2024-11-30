@@ -27,4 +27,8 @@ public class RecordandAnalyzeAnimalBehaviorController {
     @javafx.fxml.FXML
     public void SubmitButtonOnAction(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void DateDatePickerOnAction(ActionEvent actionEvent) {
+    }
 }
