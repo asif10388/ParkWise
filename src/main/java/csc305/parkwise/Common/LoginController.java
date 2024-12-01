@@ -17,7 +17,7 @@ public class LoginController
 
     @javafx.fxml.FXML
     public void onLoginButtonClick(ActionEvent actionEvent) throws IOException {
-        new SceneSwitcher(actionEvent, "dashboard-template.fxml");
+        new SceneSwitcher(actionEvent, "Users/Asif/CampgroundManager/cm-dashboard.fxml");
         // path pattern: Users/Asif/ParkDirector/pd-dashboard.fxml
     }
 }

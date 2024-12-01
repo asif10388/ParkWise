@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.OccupancyReportsController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="401.0" prefWidth="600.0">
+            <children>
+                <TabPane prefHeight="469.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Recent Reports">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="stattAccountsTableview" prefHeight="200.0" prefWidth="600.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Generate Report">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="600.0">
+                                    <children>
+                                        <VBox prefHeight="372.0" prefWidth="600.0">
+                                            <children>
+                                                <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="443.0">
+                                                    <children>
+                                                        <HBox prefHeight="100.0" prefWidth="250.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Start Date" />
+                                                                <DatePicker fx:id="startDatePicker" />
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="End Date" />
+                                                                <DatePicker fx:id="endDatePicker" />
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="559.0">
+                                                    <children>
+                                                        <VBox alignment="CENTER" prefHeight="75.0" prefWidth="562.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label text="Campsite Categories" />
+                                                                <HBox alignment="CENTER" prefHeight="38.0" prefWidth="376.0" spacing="20.0">
+                                                                    <children>
+                                                                        <VBox alignment="CENTER" prefHeight="38.0" prefWidth="597.0" spacing="20.0">
+                                                                            <children>
+                                                                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                                                                    <children>
+                                                                                        <CheckBox fx:id="reservedCheckbox" mnemonicParsing="false" text="Reserved" />
+                                                                                        <CheckBox fx:id="availableCheckbox" mnemonicParsing="false" text="Available" />
+                                                                                        <CheckBox fx:id="underMaintenanceCheckbox" mnemonicParsing="false" text="Under Maintenance" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                            </children>
+                                                                        </VBox>
+                                                                    </children>
+                                                                    <VBox.margin>
+                                                                        <Insets bottom="20.0" />
+                                                                    </VBox.margin>
+                                                                </HBox>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="128.0" prefHeight="100.0" prefWidth="443.0">
+                                                    <children>
+                                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <CheckBox fx:id="includeDetailedBreakdownCheckbox" alignment="TOP_RIGHT" mnemonicParsing="false" text="Include Detailed Breakdown" />
+                                                            </children>
+                                                            <padding>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </padding>
+                                                        </HBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="443.0">
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#onGenerateReportButtonClick" text="Generate Report" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="289.0" prefHeight="100.0" prefWidth="443.0">
+                                                    <children>
+                                                        <TableView prefHeight="75.0" prefWidth="490.0">
+                                                            <columns>
+                                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                                <TableColumn prefWidth="75.0" text="C2" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" layoutX="10.0" layoutY="232.0" prefHeight="100.0" prefWidth="443.0">
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#onDownloadPDFButtonClick" text="Download PDF" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
