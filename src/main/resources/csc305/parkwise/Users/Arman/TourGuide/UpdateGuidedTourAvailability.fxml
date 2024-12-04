@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="548.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.UpdateGuidedTourAvailabilityController">
+   <children>
+      <HBox alignment="CENTER" layoutY="28.0" prefHeight="38.0" prefWidth="651.0" style="-fx-background-color: #285430;">
+         <children>
+            <Label text="Update Guided Tour Availability" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="89.0" text="Group Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="450.0" layoutY="85.0" onAction="#TimeTextfieldOnAction" prefHeight="26.0" prefWidth="159.0" />
+      <ComboBox layoutX="105.0" layoutY="85.0" onAction="#GroupNameComboBoxOnAction" prefHeight="26.0" prefWidth="170.0" />
+      <Label layoutX="20.0" layoutY="136.0" text="Guide Assignment:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="133.0" layoutY="131.0" onAction="#GuideAssingmentComboBoxOnAction" prefHeight="26.0" prefWidth="170.0" />
+      <Label layoutX="407.0" layoutY="89.0" text="Time:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="442.0" layoutY="132.0" onAction="#DateDatePickerOnAction" />
+      <Label layoutX="407.0" layoutY="136.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="183.0" text="Update Activity:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="22.0" layoutY="212.0" mnemonicParsing="false" onAction="#KayakingCheckBoxOnAction" text="Kayaking" />
+      <CheckBox layoutX="147.0" layoutY="241.0" mnemonicParsing="false" onAction="#NightSafariCheckBoxOnAction" text="Night Safari" />
+      <CheckBox layoutX="23.0" layoutY="241.0" mnemonicParsing="false" onAction="#WildLifeViewingOnAction" text="Wildlife Viewing " />
+      <CheckBox layoutX="23.0" layoutY="271.0" mnemonicParsing="false" onAction="#EducationalTourOnAction" text="Educational Tour" />
+      <CheckBox layoutX="137.0" layoutY="211.0" mnemonicParsing="false" onAction="#BirdWatchingCheckBoxOnAction" prefHeight="18.0" prefWidth="106.0" text="Bird Watching" />
+      <CheckBox layoutX="22.0" layoutY="301.0" mnemonicParsing="false" onAction="#PhotographyWorkshopOnAction" text="Photography Workshop" />
+      <TextField layoutX="375.0" layoutY="211.0" onAction="#UpdateCapacityOnAction" prefHeight="26.0" prefWidth="159.0" />
+      <Label layoutX="375.0" layoutY="187.0" text="Update Capacity:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="375.0" layoutY="262.0" text="Note:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="375.0" layoutY="288.0" onAction="#NoteTextfieldOnAction" prefHeight="26.0" prefWidth="159.0" />
+      <TableView layoutX="20.0" layoutY="334.0" prefHeight="200.0" prefWidth="609.0">
+        <columns>
+          <TableColumn fx:id="GroupName" prefWidth="92.79998588562012" text="Group Name " />
+          <TableColumn fx:id="UpdatedCapacity" prefWidth="110.39997100830078" text="Updated Capacity" />
+            <TableColumn fx:id="updateddate" prefWidth="99.99993896484375" text="Updated Date " />
+            <TableColumn fx:id="UpdatedTime" prefWidth="99.99993896484375" text="Updated Time" />
+            <TableColumn fx:id="Guide" prefWidth="103.99996948242188" text="Guide " />
+            <TableColumn fx:id="Note" prefWidth="101.5999755859375" text="Note" />
+        </columns>
+      </TableView>
+      <Button layoutX="565.0" layoutY="289.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" text="Submit">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

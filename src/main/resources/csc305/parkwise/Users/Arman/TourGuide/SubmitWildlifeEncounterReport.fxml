@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="381.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.SubmitWildlifeEncounterReportController">
+   <children>
+      <HBox alignment="CENTER" layoutY="28.0" prefHeight="36.0" prefWidth="600.0" style="-fx-background-color: #285430;">
+         <children>
+            <Label text="Submit Wildlife Encounter Report" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="8.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="87.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="59.0" layoutY="119.0" onAction="#TimeTextfieldOnAction" prefHeight="26.0" prefWidth="175.0" />
+      <DatePicker layoutX="59.0" layoutY="83.0" onAction="#DateDatePickerOnAction" />
+      <Label layoutX="21.0" layoutY="123.0" text="Time:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="427.0" layoutY="83.0" onAction="#LocationComboBoxOnAction" prefWidth="150.0" />
+      <Label layoutX="348.0" layoutY="87.0" text="Location:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="330.0" layoutY="123.0" text="Animal Species:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="427.0" layoutY="119.0" onAction="#AnimalspeciesComboBoxOnAction" prefWidth="150.0" />
+      <Label layoutX="349.0" layoutY="157.0" text="Number:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="427.0" layoutY="153.0" onAction="#NumberTextfieldOnAction" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="300.0" layoutY="191.0" text="Behaviour Observed:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="427.0" layoutY="187.0" onAction="#BehaviourObservedComboBoxOnAction" prefWidth="150.0" />
+      <Label layoutX="21.0" layoutY="157.0" text="Visitor Interactions:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="21.0" layoutY="187.0" onAction="#VisitorInstructionTextfieldOnAction" prefHeight="26.0" prefWidth="215.0" />
+      <Label layoutX="21.0" layoutY="230.0" text="Guide Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="19.0" layoutY="255.0" onAction="#GuideNameComboBoxOnAction" prefWidth="150.0" />
+      <TextField alignment="TOP_LEFT" layoutX="301.0" layoutY="254.0" onAction="#NoteTextfieldOnAction" prefHeight="58.0" prefWidth="273.0" />
+      <Label layoutX="304.0" layoutY="230.0" text="Note:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="274.0" layoutY="332.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" text="Submit">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

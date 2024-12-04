@@ -2,8 +2,24 @@ package csc305.parkwise.Users.Arman.TourGuide;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.scene.control.TableColumn;
 
 public class RegisterANewTourGroupController {
+    @javafx.fxml.FXML
+    private TableColumn GroupName;
+    @javafx.fxml.FXML
+    private TableColumn tourtype;
+    @javafx.fxml.FXML
+    private TableColumn Tourdate;
+    @javafx.fxml.FXML
+    private TableColumn NumberOfPeople;
+    @javafx.fxml.FXML
+    private TableColumn RecordID;
+    @javafx.fxml.FXML
+    private TableColumn tourguide;
+    @javafx.fxml.FXML
+    private TableColumn Timeslot;
+
     @javafx.fxml.FXML
     public void AdditionalNotesTextFieldOnAction(ActionEvent actionEvent) {
     }

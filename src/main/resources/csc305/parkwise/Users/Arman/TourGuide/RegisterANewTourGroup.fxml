@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="842.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.RegisterANewTourGroupController">
    <children>
       <HBox alignment="CENTER" layoutY="28.0" prefHeight="38.0" prefWidth="842.0" style="-fx-background-color: #285430;">
@@ -76,13 +75,13 @@
       <CheckBox layoutX="490.0" layoutY="217.0" mnemonicParsing="false" onAction="#AdditionalNotesCheckBoxOnAction" prefHeight="18.0" prefWidth="123.0" text="Additional Notes" />
       <TableView layoutX="20.0" layoutY="355.0" prefHeight="230.0" prefWidth="802.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Record ID" />
-          <TableColumn prefWidth="104.800048828125" text="Group Name" />
-            <TableColumn prefWidth="122.40000915527344" text="Number of People " />
-            <TableColumn prefWidth="122.40000915527344" text="Tour Date " />
-            <TableColumn prefWidth="122.40000915527344" text="Time Slot" />
-            <TableColumn prefWidth="122.40000915527344" text="Tour Type" />
-            <TableColumn prefWidth="127.99997558593748" text="Tour Guide" />
+          <TableColumn fx:id="RecordID" prefWidth="75.0" text="Record ID" />
+          <TableColumn fx:id="GroupName" prefWidth="104.800048828125" text="Group Name" />
+            <TableColumn fx:id="NumberOfPeople" prefWidth="122.40000915527344" text="Number of People " />
+            <TableColumn fx:id="Tourdate" prefWidth="122.40000915527344" text="Tour Date " />
+            <TableColumn fx:id="Timeslot" prefWidth="122.40000915527344" text="Time Slot" />
+            <TableColumn fx:id="tourtype" prefWidth="122.40000915527344" text="Tour Type" />
+            <TableColumn fx:id="tourguide" prefWidth="127.99997558593748" text="Tour Guide" />
         </columns>
       </TableView>
       <Button layoutX="756.0" layoutY="321.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="65.0" text="Submit">
