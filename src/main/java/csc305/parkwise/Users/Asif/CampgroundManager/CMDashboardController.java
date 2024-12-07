@@ -1,11 +1,14 @@
 package csc305.parkwise.Users.Asif.CampgroundManager;
 
+import csc305.parkwise.Common.Utils.SceneSwitcher;
 import csc305.parkwise.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+
+import java.io.IOException;
 
 public class CMDashboardController
 {
@@ -23,13 +26,9 @@ public class CMDashboardController
     }
 
     @javafx.fxml.FXML
-    public void onCampsiteAvailabilityButtonClick(Event event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("Users/Asif/CampgroundManager/campsite-availability-view.fxml"));
-            dashboardBorderPane.setCenter(loader.load());
-        } catch (Exception e){
-            throw new RuntimeException(e);
-        }
+    public void onCampsiteAvailabilityButtonClick(Event event) throws IOException {
+        SceneSwitcher sceneSwitcher = new SceneSwitcher();
+        sceneSwitcher.replaceScene(dashboardBorderPane, "Users/Asif/CampgroundManager/campsite-availability-view.fxml");
     }
 
     @javafx.fxml.FXML
