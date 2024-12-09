@@ -1,4 +1,4 @@
-package csc305.parkwise.Common.Utils;
+package csc305.parkwise.Common.Utils.Stream;
 
 import java.io.IOException;
 import java.io.OutputStream;

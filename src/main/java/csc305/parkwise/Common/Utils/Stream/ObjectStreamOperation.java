@@ -1,6 +1,8 @@
-package csc305.parkwise.Common.Utils;
+package csc305.parkwise.Common.Utils.Stream;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ObjectStreamOperation {
     public ObjectStreamOperation() {
@@ -36,4 +38,35 @@ public class ObjectStreamOperation {
 
         return ois;
     }
+
+    public static List<Object> getObjectsFromFile(String filePath) throws IOException {
+        List<Object> objects = new ArrayList<>();
+        ObjectInputStream ois = null;
+
+        try{
+            ois = getObjectInputStream(filePath);
+
+            while (true) {
+                try {
+                    Object obj = ois.readObject();
+                    objects.add(obj);
+                } catch (EOFException | ClassNotFoundException e) {
+                    break;
+                }
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return objects;
+    }
 }
+

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="dashboardBorderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.CMDashboardController">
+<BorderPane fx:id="dashboardBorderPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.CMDashboardController">
     <left>
         <VBox prefHeight="413.0" prefWidth="120.0" style="-fx-background-color: #285430;" BorderPane.alignment="CENTER">
             <children>
@@ -120,12 +120,12 @@
     <top>
         <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="494.0" spacing="20.0" style="-fx-background-color: #285430;" BorderPane.alignment="CENTER">
             <children>
-                <Label text="User ID" textFill="WHITE">
+                <Label fx:id="userIdLabel" text="User ID" textFill="WHITE">
                     <font>
                         <Font name="Poppins Bold" size="12.0" />
                     </font>
                 </Label>
-                <Label layoutX="10.0" layoutY="10.0" text="User Role" textFill="WHITE">
+                <Label fx:id="userTypeLabel" layoutX="10.0" layoutY="10.0" text="User Role" textFill="WHITE">
                     <font>
                         <Font name="Poppins Bold" size="12.0" />
                     </font>

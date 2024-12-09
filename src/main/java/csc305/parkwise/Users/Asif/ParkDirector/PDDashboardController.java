@@ -4,6 +4,7 @@ import csc305.parkwise.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -15,6 +16,18 @@ public class PDDashboardController
     private BorderPane dashboardBorderPane;
     @javafx.fxml.FXML
     private VBox dashboardVbox;
+    @javafx.fxml.FXML
+    private Label userIdLabel;
+    @javafx.fxml.FXML
+    private Label userTypeLabel;
+
+    public void setUserType(String userType){
+        userTypeLabel.setText(userType);
+    }
+
+    public void setUserId(String userId){
+        userIdLabel.setText(userId);
+    }
 
     @javafx.fxml.FXML
     public void initialize() {
