@@ -150,7 +150,7 @@ public class RegulationsController
 
         try {
             StreamMapper stream = new StreamMapper();
-            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.RegulationObjects));
+            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.RegulationObjects), true);
             oos.writeObject(regulation);
             oos.close();
 

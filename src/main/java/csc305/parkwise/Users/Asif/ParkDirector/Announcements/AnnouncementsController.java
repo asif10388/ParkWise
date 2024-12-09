@@ -141,7 +141,7 @@ public class AnnouncementsController
 
         try {
             StreamMapper stream = new StreamMapper();
-            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.AnnouncementObjects));
+            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.AnnouncementObjects), true);
             oos.writeObject(announcement);
             oos.close();
 

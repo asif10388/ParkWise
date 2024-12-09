@@ -8,11 +8,17 @@ public class ObjectStreamOperation {
     public ObjectStreamOperation() {
     }
 
-    public static ObjectOutputStream getObjectOutputStream(String filePath) throws IOException {
+    public static ObjectOutputStream getObjectOutputStream(String filePath, boolean update) throws IOException {
         File userObjectsFile = new File(filePath);
 
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
+
+        if(update) {
+            fos = new FileOutputStream(userObjectsFile, false);
+            oos = new ObjectOutputStream(fos);
+            return oos;
+        }
 
         if(userObjectsFile.exists()) {
             fos = new FileOutputStream(userObjectsFile, true);

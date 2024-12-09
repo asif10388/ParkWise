@@ -129,7 +129,7 @@ public class PerformanceReviewsController
 
         try {
             StreamMapper stream = new StreamMapper();
-            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.PerformanceReviewObjects));
+            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.PerformanceReviewObjects), true);
             oos.writeObject(performanceReview);
             oos.close();
 
