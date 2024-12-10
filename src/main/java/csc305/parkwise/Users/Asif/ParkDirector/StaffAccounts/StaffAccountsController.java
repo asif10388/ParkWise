@@ -103,7 +103,7 @@ public class StaffAccountsController
         showResultLabel.setText(newStaff.toString());
 
         try {
-            ObjectOutputStream oos = getObjectOutputStream("src/main/java/csc305/parkwise/Common/Streams/UserObjects.bin", true);
+            ObjectOutputStream oos = getObjectOutputStream("src/main/java/csc305/parkwise/Common/Streams/UserObjects.bin", false);
             oos.writeObject(newStaff);
             oos.close();
 

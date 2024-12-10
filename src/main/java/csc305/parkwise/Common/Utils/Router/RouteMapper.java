@@ -15,14 +15,15 @@ public class RouteMapper {
     }
 
     public static void makeCampgroundManagerRoutes() {
-        campgroundManagerRoutes.put(CampgroundManagerRoutes.AssignRangerView, "Users/Asif/CampgroundManager/assign-ranger-view.fxml");
-        campgroundManagerRoutes.put(CampgroundManagerRoutes.CamperEntriesView, "Users/Asif/CampgroundManager/camper-entries-view.fxml.fxml");
-        campgroundManagerRoutes.put(CampgroundManagerRoutes.CampsiteAvailabilityView, "Users/Asif/CampgroundManager/campsite-availability-view.fxml");
         campgroundManagerRoutes.put(CampgroundManagerRoutes.CMDashboardView, "Users/Asif/CampgroundManager/cm-dashboard.fxml");
-        campgroundManagerRoutes.put(CampgroundManagerRoutes.MaintenanceRequestsView, "Users/Asif/CampgroundManager/maintenance-requests-view.fxml");
+        campgroundManagerRoutes.put(CampgroundManagerRoutes.AssignRangerView, "Users/Asif/CampgroundManager/assign-ranger-view.fxml");
+        campgroundManagerRoutes.put(CampgroundManagerRoutes.RestockSuppliesView, "Users/Asif/CampgroundManager/restock-supplies-view.fxml");
+        campgroundManagerRoutes.put(CampgroundManagerRoutes.CamperEntriesView, "Users/Asif/CampgroundManager/camper-entries-view.fxml.fxml");
         campgroundManagerRoutes.put(CampgroundManagerRoutes.OccupancyReportsView, "Users/Asif/CampgroundManager/occupancy-reports-view.fxml");
+        campgroundManagerRoutes.put(CampgroundManagerRoutes.MaintenanceRequestsView, "Users/Asif/CampgroundManager/maintenance-requests-view.fxml");
         campgroundManagerRoutes.put(CampgroundManagerRoutes.OnsiteRegistrationsView, "Users/Asif/CampgroundManager/onsite-registrations-view.fxml");
-        campgroundManagerRoutes.put(CampgroundManagerRoutes.RentalEquipmentView, "Users/Asif/CampgroundManager/rental-equipment-view.fxml");
+        campgroundManagerRoutes.put(CampgroundManagerRoutes.CampsiteAvailabilityView, "Users/Asif/CampgroundManager/campsite-availability-view.fxml");
+        campgroundManagerRoutes.put(CampgroundManagerRoutes.RecordEquipmentUsageView, "Users/Asif/CampgroundManager/record-equipment-usage-view.fxml");
     }
 
     public static void makeParkDirectorRoutes() {

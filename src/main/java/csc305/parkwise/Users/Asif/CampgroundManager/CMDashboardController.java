@@ -1,7 +1,11 @@
 package csc305.parkwise.Users.Asif.CampgroundManager;
 
+import csc305.parkwise.Common.Utils.Router.RouteMapper;
+import csc305.parkwise.Common.Utils.Router.RoutesEnum.CampgroundManagerRoutes;
 import csc305.parkwise.Common.Utils.Router.SceneSwitcher;
 import csc305.parkwise.MainApplication;
+import csc305.parkwise.Users.Asif.CampgroundManager.CampsiteMaintenanceRequests.CampsiteMaintenanceRequestsController;
+import csc305.parkwise.Users.Asif.CampgroundManager.RestockSuppliesRequests.RestockSuppliesRequestController;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -22,12 +26,25 @@ public class CMDashboardController
     @javafx.fxml.FXML
     private Label userTypeLabel;
 
+    private String userId;
+    private String userType;
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
     public void setUserType(String userType){
         userTypeLabel.setText(userType);
+        this.userType = userType;
     }
 
     public void setUserId(String userId){
         userIdLabel.setText(userId);
+        this.userId = userId;
     }
 
 
@@ -49,16 +66,6 @@ public class CMDashboardController
     public void onCampsiteConfirmationsButtonClick(Event event) {
         try {
             FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("Users/Asif/CampgroundManager/assign-ranger-view.fxml"));
-            dashboardBorderPane.setCenter(loader.load());
-        } catch (Exception e){
-            throw new RuntimeException(e);
-        }
-    }
-
-    @javafx.fxml.FXML
-    public void onRentalEquipmentButtonClick(Event event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("Users/Asif/CampgroundManager/rental-equipment-view.fxml"));
             dashboardBorderPane.setCenter(loader.load());
         } catch (Exception e){
             throw new RuntimeException(e);
@@ -106,9 +113,33 @@ public class CMDashboardController
     }
 
     @javafx.fxml.FXML
-    public void onMaintenanceRequestsButtonClick(Event event) {
+    public void onMaintenanceRequestsButtonClick(Event event) throws IOException {
+        RouteMapper routes = new RouteMapper();
+        String route = routes.getCampgroundManagerRoute(CampgroundManagerRoutes.MaintenanceRequestsView);
+
+        SceneSwitcher cmSceneSwitcher = new SceneSwitcher(route);
+        cmSceneSwitcher.replaceScene(dashboardBorderPane);
+
+        CampsiteMaintenanceRequestsController campsiteMaintenanceRequestsController = cmSceneSwitcher.getFxmlLoader().getController();
+        campsiteMaintenanceRequestsController.setUserId(Integer.parseInt(this.getUserId()));
+    }
+
+    @javafx.fxml.FXML
+    public void onRestockSuppliesButtonClick(Event event) throws IOException {
+        RouteMapper routes = new RouteMapper();
+        String route = routes.getCampgroundManagerRoute(CampgroundManagerRoutes.RestockSuppliesView);
+
+        SceneSwitcher cmSceneSwitcher = new SceneSwitcher(route);
+        cmSceneSwitcher.replaceScene(dashboardBorderPane);
+
+        RestockSuppliesRequestController restockSuppliesRequestController = cmSceneSwitcher.getFxmlLoader().getController();
+        restockSuppliesRequestController.setUserId(Integer.parseInt(this.getUserId()));
+    }
+
+    @javafx.fxml.FXML
+    public void onRecordUsageButtonClick(Event event) {
         try {
-            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("Users/Asif/CampgroundManager/maintenance-requests-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource("Users/Asif/CampgroundManager/record-equipment-usage-view.fxml"));
             dashboardBorderPane.setCenter(loader.load());
         } catch (Exception e){
             throw new RuntimeException(e);

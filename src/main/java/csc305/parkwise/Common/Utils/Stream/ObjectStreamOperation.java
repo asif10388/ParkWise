@@ -34,6 +34,10 @@ public class ObjectStreamOperation {
     public static ObjectInputStream getObjectInputStream(String filePath) throws IOException {
         File userObjectsFile = new File(filePath);
 
+        if(!userObjectsFile.exists()) {
+            throw new FileNotFoundException(filePath);
+        }
+
         FileInputStream fos = null;
         ObjectInputStream ois = null;
 

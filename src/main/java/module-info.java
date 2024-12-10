@@ -39,12 +39,19 @@ module csc305.parkwise {
 
     exports csc305.parkwise.Common.Utils.Router.RoutesEnum;
     opens csc305.parkwise.Common.Utils.Router.RoutesEnum to javafx.fxml;
+
     exports csc305.parkwise.Users.Asif.ParkDirector.Announcements;
     opens csc305.parkwise.Users.Asif.ParkDirector.Announcements to javafx.fxml;
+
     exports csc305.parkwise.Users.Asif.ParkDirector.Regulations;
     opens csc305.parkwise.Users.Asif.ParkDirector.Regulations to javafx.fxml;
-    exports csc305.parkwise.Users.Asif.CampgroundManager.Campsites;
-    opens csc305.parkwise.Users.Asif.CampgroundManager.Campsites to javafx.fxml;
-    exports csc305.parkwise.Users.Asif.CampgroundManager.MaintenanceRequests;
-    opens csc305.parkwise.Users.Asif.CampgroundManager.MaintenanceRequests to javafx.fxml;
+
+    exports csc305.parkwise.Users.Asif.CampgroundManager.CampsiteMaintenanceRequests;
+    opens csc305.parkwise.Users.Asif.CampgroundManager.CampsiteMaintenanceRequests to javafx.fxml;
+
+    exports csc305.parkwise.Users.Asif.CampgroundManager.RestockSuppliesRequests;
+    opens csc305.parkwise.Users.Asif.CampgroundManager.RestockSuppliesRequests to javafx.fxml;
+
+    exports csc305.parkwise.Users.Asif.CampgroundManager.Common.Models;
+    opens csc305.parkwise.Users.Asif.CampgroundManager.Common.Models to javafx.fxml;
 }

@@ -1,10 +1,10 @@
-package csc305.parkwise.Users.Asif.CampgroundManager.Campsites;
+package csc305.parkwise.Users.Asif.CampgroundManager;
 
 import csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation;
 import csc305.parkwise.Common.Utils.Stream.StreamMapper;
 import csc305.parkwise.Common.Utils.Stream.StreamsEnum.ObjectStreams;
 import csc305.parkwise.Common.Utils.Utilities;
-import csc305.parkwise.Users.Asif.ParkDirector.Regulations.Regulation;
+import csc305.parkwise.Users.Asif.CampgroundManager.Common.Models.Campsite;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,7 +13,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import static csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation.getObjectOutputStream;

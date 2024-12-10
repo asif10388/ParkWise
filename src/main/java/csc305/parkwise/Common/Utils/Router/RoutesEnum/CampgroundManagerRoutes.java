@@ -4,9 +4,10 @@ public enum CampgroundManagerRoutes {
     CMDashboardView,
     AssignRangerView,
     CamperEntriesView,
-    RentalEquipmentView,
+    RestockSuppliesView,
     OccupancyReportsView,
     OnsiteRegistrationsView,
     MaintenanceRequestsView,
+    RecordEquipmentUsageView,
     CampsiteAvailabilityView,
 }

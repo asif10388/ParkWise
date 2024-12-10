@@ -1,4 +1,4 @@
-package csc305.parkwise.Users.Asif.CampgroundManager.Campsites;
+package csc305.parkwise.Users.Asif.CampgroundManager.Common.Models;
 
 import java.io.Serializable;
 
