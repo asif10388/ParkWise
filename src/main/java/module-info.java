@@ -56,4 +56,6 @@ module csc305.parkwise {
     opens csc305.parkwise.Users.Asif.CampgroundManager.Common.Models to javafx.fxml;
     exports csc305.parkwise.Users.Asif.ParkDirector.Budgets;
     opens csc305.parkwise.Users.Asif.ParkDirector.Budgets to javafx.fxml;
+    exports csc305.parkwise.Users.Asif.CampgroundManager.OccupancyReports;
+    opens csc305.parkwise.Users.Asif.CampgroundManager.OccupancyReports to javafx.fxml;
 }

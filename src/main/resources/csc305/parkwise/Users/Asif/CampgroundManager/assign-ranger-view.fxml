@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.AssignRangerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.AssignRangerController">
     <children>
-        <VBox alignment="TOP_CENTER" prefHeight="369.0" prefWidth="600.0">
+        <VBox alignment="TOP_CENTER" prefHeight="401.0" prefWidth="600.0">
             <children>
                 <TabPane prefHeight="397.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
@@ -27,8 +27,9 @@
                                                 <TableColumn fx:id="campsiteBookingIdColumn" prefWidth="75.0" text="Booking Id" />
                                                 <TableColumn fx:id="campsiteBookingCampsiteIdColumn" prefWidth="75.0" text="Campsite Id" />
                                     <TableColumn fx:id="campsiteBookingUserIdColumn" prefWidth="75.0" text="User Id" />
-                                    <TableColumn fx:id="campsiteBookingCheckInDateColumn" prefWidth="75.0" text="Check In Date" />
+                                    <TableColumn fx:id="campsiteBookingRangerIdColumn" prefWidth="75.0" text="Ranger Id" />
                                     <TableColumn fx:id="campsiteBookingCheckOutDateColumn" prefWidth="75.0" text="Check Out Date" />
+                                    <TableColumn fx:id="campsiteBookingCheckInDateColumn" prefWidth="75.0" text="Check In Date" />
                                             </columns>
                                  <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -49,7 +50,7 @@
                                                         <VBox alignment="CENTER" prefHeight="100.0" prefWidth="458.0" spacing="10.0" style="-fx-background-color: #FFFFFF;">
                                                             <children>
                                                                 <Label text="Select Campsite Booking" />
-                                                                <ComboBox fx:id="selectCampsiteBookingCombobox" prefWidth="150.0" />
+                                                                <ComboBox fx:id="selectCampsiteBookingCombobox" onAction="#onCampsiteBookingSelected" prefWidth="150.0" />
                                                             </children>
                                                             <padding>
                                                                 <Insets bottom="20.0" top="10.0" />
@@ -60,6 +61,19 @@
                                                         <Insets bottom="20.0" top="20.0" />
                                                     </VBox.margin>
                                                 </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="30.0" prefHeight="100.0" prefWidth="443.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="458.0" spacing="10.0" style="-fx-background-color: #FFFFFF;">
+                                             <children>
+                                                <Label text="Select Ranger" />
+                                                <ComboBox fx:id="selectRangerCombobox" onAction="#onRangerSelected" prefWidth="150.0" />
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="20.0" top="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
                                                 <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="443.0">
                                                     <children>
                                                         <VBox alignment="CENTER" prefHeight="70.0" prefWidth="598.0" style="-fx-background-color: #FFFFFF;">
@@ -75,7 +89,7 @@
                                                                     <children>
                                                                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                                                                             <children>
-                                                                                <Label text="Booker Name:" />
+                                                                                <Label text="Booker Id:" />
                                                                                 <Label fx:id="bookerNameLabel" text="Oslo" />
                                                                             </children>
                                                                         </HBox>
@@ -87,8 +101,8 @@
                                                                         </HBox>
                                                                         <HBox alignment="CENTER" layoutX="210.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                                                                             <children>
-                                                                                <Label fx:id="bookingCampsiteLabel" text="Booked Campsite" />
-                                                                                <Label fx:id="campsiteLabel" text="West Beacon" />
+                                                                                <Label text="Booked Campsite" />
+                                                                                <Label fx:id="bookingCampsiteLabel" text="West Beacon" />
                                                                             </children>
                                                                         </HBox>
                                                                     </children>
@@ -131,7 +145,7 @@
                                                 </HBox>
                                                 <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="600.0" spacing="20.0">
                                                     <children>
-                                                        <Button mnemonicParsing="false" onAction="#onAssignCamperToSiteButtonClick" text="Assign Camper to Site" />
+                                                        <Button fx:id="assignCamperToSiteButton" mnemonicParsing="false" onAction="#onAssignCamperToSiteButtonClick" text="Assign Camper to Site" />
                                                     </children>
                                                     <VBox.margin>
                                                         <Insets />

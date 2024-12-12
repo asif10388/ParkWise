@@ -19,6 +19,7 @@ public class StreamMapper {
         objectStreams.put(ObjectStreams.EquipmentObjects, basePath + "EquipmentObjects.bin");
         objectStreams.put(ObjectStreams.RegulationObjects, basePath + "RegulationObjects.bin");
         objectStreams.put(ObjectStreams.AnnouncementObjects, basePath + "AnnouncementObjects.bin");
+        objectStreams.put(ObjectStreams.OccupancyReportObjects, basePath + "OccupancyReportObjects.bin");
         objectStreams.put(ObjectStreams.CampsiteBookingObjects, basePath + "CampsiteBookingObjects.bin");
         objectStreams.put(ObjectStreams.PerformanceReviewObjects, basePath + "PerformanceReviewObjects.bin");
         objectStreams.put(ObjectStreams.RestockSuppliesRequestObjects, basePath + "RestockSuppliesRequestObjects.bin");

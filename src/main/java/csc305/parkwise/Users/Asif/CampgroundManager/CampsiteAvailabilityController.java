@@ -48,8 +48,6 @@ public class CampsiteAvailabilityController
                 stream.getObjectStream(ObjectStreams.CampsiteObjects)
         );
 
-        System.out.println(campsiteObjects.toString());
-
         return campsiteObjects.stream()
                 .filter(obj -> obj instanceof Campsite)
                 .map(obj -> (Campsite) obj)

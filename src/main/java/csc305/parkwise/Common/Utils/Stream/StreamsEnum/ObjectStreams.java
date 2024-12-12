@@ -9,6 +9,7 @@ public enum ObjectStreams {
     RegulationObjects,
     AnnouncementObjects,
     CampsiteBookingObjects,
+    OccupancyReportObjects,
     PerformanceReviewObjects,
     RestockSuppliesRequestObjects,
     CampgroundMaintenanceRequestObjects,
