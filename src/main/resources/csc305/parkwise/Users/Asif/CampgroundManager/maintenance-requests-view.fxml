@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="282.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.CampsiteMaintenanceRequests.CampsiteMaintenanceRequestsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.CampsiteMaintenanceRequests.CampsiteMaintenanceRequestsController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="282.0" prefWidth="600.0">
          <children>
@@ -64,6 +64,16 @@
                                           <Insets bottom="20.0" top="20.0" />
                                        </VBox.margin>
                                     </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="101.0" prefHeight="100.0" prefWidth="443.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="100.0" prefWidth="494.0" spacing="10.0">
+                                             <children>
+                                                <Label text="Maintenance Type" />
+                                                <ComboBox fx:id="maintenanceTypeCombobox" prefWidth="150.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="443.0">
                                        <children>
                                           <VBox alignment="CENTER" prefHeight="100.0" prefWidth="494.0" spacing="10.0">
@@ -76,7 +86,10 @@
                                     </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="50.0" prefWidth="600.0" spacing="20.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#onSubmitRequestButtonClick" text="Submit Request" />
+                                          <Button mnemonicParsing="false" onAction="#onSubmitRequestButtonClick" text="Submit Request">
+                                             <HBox.margin>
+                                                <Insets top="20.0" />
+                                             </HBox.margin></Button>
                                        </children>
                                        <VBox.margin>
                                           <Insets />

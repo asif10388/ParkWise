@@ -17,20 +17,30 @@ public class RestockSuppliesRequest implements Serializable {
     private int requestId;
     private String status;
     private String priority;
+    private String requestType;
     private int requiredAmount;
     private LocalDate createdAt;
     private String requestReason;
 
-    public RestockSuppliesRequest(int userId, int itemId, int quantity, int requestId, String status, String priority, int requiredAmount, LocalDate createdAt, String requestReason) {
+    public RestockSuppliesRequest(int userId, int itemId, int quantity, int requestId, String status, String priority, String requestType, int requiredAmount, LocalDate createdAt, String requestReason) {
         this.userId = userId;
         this.itemId = itemId;
         this.quantity = quantity;
         this.requestId = requestId;
         this.status = status;
         this.priority = priority;
+        this.requestType = requestType;
         this.requiredAmount = requiredAmount;
         this.createdAt = createdAt;
         this.requestReason = requestReason;
+    }
+
+    public String getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
     }
 
     public String getRequestReason() {
@@ -127,6 +137,7 @@ public class RestockSuppliesRequest implements Serializable {
                 ", requestId=" + requestId +
                 ", status='" + status + '\'' +
                 ", priority='" + priority + '\'' +
+                ", requestType='" + requestType + '\'' +
                 ", requiredAmount=" + requiredAmount +
                 ", createdAt=" + createdAt +
                 ", requestReason='" + requestReason + '\'' +

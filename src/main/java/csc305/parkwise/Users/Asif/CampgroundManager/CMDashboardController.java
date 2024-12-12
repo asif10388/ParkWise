@@ -53,7 +53,9 @@ public class CMDashboardController
     }
 
     @javafx.fxml.FXML
-    public void onLogoutButtonClick(ActionEvent actionEvent) {
+    public void onLogoutButtonClick(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher cmSceneSwitcher = new SceneSwitcher("login.fxml");
+        cmSceneSwitcher.navigateTo(actionEvent);
     }
 
     @javafx.fxml.FXML

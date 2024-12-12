@@ -1,5 +1,8 @@
 package csc305.parkwise.Users.Asif.ParkDirector;
 
+import csc305.parkwise.Common.Utils.Router.RouteMapper;
+import csc305.parkwise.Common.Utils.Router.RoutesEnum.CampgroundManagerRoutes;
+import csc305.parkwise.Common.Utils.Router.SceneSwitcher;
 import csc305.parkwise.MainApplication;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -34,8 +37,9 @@ public class PDDashboardController
     }
 
     @javafx.fxml.FXML
-    public void onLogoutButtonClick(ActionEvent actionEvent) {
-
+    public void onLogoutButtonClick(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher cmSceneSwitcher = new SceneSwitcher("login.fxml");
+        cmSceneSwitcher.navigateTo(actionEvent);
     }
 
     @javafx.fxml.FXML

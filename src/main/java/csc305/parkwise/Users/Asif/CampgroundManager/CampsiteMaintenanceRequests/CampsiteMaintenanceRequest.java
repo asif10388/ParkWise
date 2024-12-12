@@ -6,6 +6,7 @@ import csc305.parkwise.Common.Utils.Stream.StreamsEnum.ObjectStreams;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import static csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation.getObjectOutputStream;
 
@@ -16,6 +17,46 @@ public class CampsiteMaintenanceRequest implements Serializable {
     private int campsiteId;
     private String priority;
     private String description;
+    private String requestType;
+    private LocalDate requestDate;
+    private String decisionComments;
+
+    public CampsiteMaintenanceRequest(int userId, int requestId, String status, int campsiteId, String priority, String description, String requestType, LocalDate requestDate, String decisionComments) {
+        this.userId = userId;
+        this.requestId = requestId;
+        this.status = status;
+        this.campsiteId = campsiteId;
+        this.priority = priority;
+        this.description = description;
+        this.requestType = requestType;
+        this.requestDate = requestDate;
+        this.decisionComments = decisionComments;
+    }
+
+
+    public String getDecisionComments() {
+        return decisionComments;
+    }
+
+    public void setDecisionComments(String decisionComments) {
+        this.decisionComments = decisionComments;
+    }
+
+    public String getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
+    }
+
+    public LocalDate getRequestDate() {
+        return requestDate;
+    }
+
+    public void setRequestDate(LocalDate requestDate) {
+        this.requestDate = requestDate;
+    }
 
     public String getStatus() {
         return status;
@@ -23,15 +64,6 @@ public class CampsiteMaintenanceRequest implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public CampsiteMaintenanceRequest(int userId, int requestId, String status, int campsiteId, String priority, String description) {
-        this.userId = userId;
-        this.requestId = requestId;
-        this.status = status;
-        this.campsiteId = campsiteId;
-        this.priority = priority;
-        this.description = description;
     }
 
     public int getUserId() {
@@ -98,6 +130,9 @@ public class CampsiteMaintenanceRequest implements Serializable {
                 ", campsiteId=" + campsiteId +
                 ", priority='" + priority + '\'' +
                 ", description='" + description + '\'' +
+                ", requestType='" + requestType + '\'' +
+                ", requestDate=" + requestDate +
+                ", decisionComments='" + decisionComments + '\'' +
                 '}';
     }
 }

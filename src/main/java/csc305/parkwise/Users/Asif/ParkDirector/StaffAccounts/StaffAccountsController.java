@@ -2,6 +2,8 @@ package csc305.parkwise.Users.Asif.ParkDirector.StaffAccounts;
 
 import csc305.parkwise.Common.Models.User;
 import csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation;
+import csc305.parkwise.Common.Utils.Stream.StreamMapper;
+import csc305.parkwise.Common.Utils.Stream.StreamsEnum.ObjectStreams;
 import csc305.parkwise.Common.Utils.Utilities;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -41,7 +43,7 @@ public class StaffAccountsController
         staffFullnameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
 
         List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                "src/main/java/csc305/parkwise/Common/Streams/UserObjects.bin"
+                "src/main/java/csc305/parkwise/Common/Streams/StaffObjects.bin"
         );
 
         List<StaffAccount> staffAccounts = userObjects.stream()
@@ -82,7 +84,7 @@ public class StaffAccountsController
         }
 
         List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                "src/main/java/csc305/parkwise/Common/Streams/UserObjects.bin"
+                "src/main/java/csc305/parkwise/Common/Streams/StaffObjects.bin"
         );
 
         StaffAccount getLastStaffAccount = userObjects.stream()
@@ -103,7 +105,8 @@ public class StaffAccountsController
         showResultLabel.setText(newStaff.toString());
 
         try {
-            ObjectOutputStream oos = getObjectOutputStream("src/main/java/csc305/parkwise/Common/Streams/UserObjects.bin", false);
+            StreamMapper stream = new StreamMapper();
+            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.StaffObjects), false);
             oos.writeObject(newStaff);
             oos.close();
 
@@ -112,11 +115,6 @@ public class StaffAccountsController
         } catch (Exception ignored) {
             Utilities.showAlert("Something went wrong. Please try again", Alert.AlertType.ERROR);
         }
-
-//        passwordInput.clear();
-//        fullNameTextInput.clear();
-//        emailAddressInput.clear();
-//        userTypeCombobox.setValue(null);
     }
 
     @javafx.fxml.FXML

@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,8 @@ public class CampsiteMaintenanceRequestsController
     private TableColumn<CampsiteMaintenanceRequest, Integer> campsiteMaintenanceRequestIdColumn;
     @javafx.fxml.FXML
     private TableColumn<CampsiteMaintenanceRequest, String> campsiteMaintenanceCampsiteColumn;
+    @javafx.fxml.FXML
+    private ComboBox<String> maintenanceTypeCombobox;
 
     public int getUserId() {
         return userId;
@@ -81,6 +84,7 @@ public class CampsiteMaintenanceRequestsController
         List<Campsite> campsites =  getCampsitesFromFile();
         List<CampsiteMaintenanceRequest> campsiteMaintenanceRequests =  getCampsiteMaintenanceRequestsFromFile();
 
+        maintenanceTypeCombobox.getItems().addAll("Repair", "Improvement");
         selectPriorityCombobox.getItems().addAll("High", "Medium", "Low");
         campsites.forEach(obj -> selectCampsiteCombobox.getItems().add(obj.getCampsiteName()));
 
@@ -90,12 +94,17 @@ public class CampsiteMaintenanceRequestsController
 
     @javafx.fxml.FXML
     public void onSubmitRequestButtonClick(ActionEvent actionEvent) throws IOException {
-        if(selectCampsiteCombobox.getValue() == null || selectPriorityCombobox.getValue() == null && issueDescriptionTextarea.getText().isBlank()){
+        if(selectCampsiteCombobox.getValue() == null ||
+                selectPriorityCombobox.getValue() == null ||
+                issueDescriptionTextarea.getText().isBlank() ||
+                maintenanceTypeCombobox.getValue() == null
+        ){
             Utilities.showAlert("Please fill out all fields", Alert.AlertType.ERROR);
         }
 
         String priority = selectPriorityCombobox.getValue();
         String campsiteName = selectCampsiteCombobox.getValue();
+        String maintenanceType = maintenanceTypeCombobox.getValue();
         String issueDescription = issueDescriptionTextarea.getText();
 
         StreamMapper stream = new StreamMapper();
@@ -117,7 +126,10 @@ public class CampsiteMaintenanceRequestsController
                     "Pending",
                     campsite.getCampsiteId(),
                     priority,
-                    issueDescription
+                    issueDescription,
+                    maintenanceType,
+                    LocalDate.now(),
+                    null
             );
 
             boolean submitRequest = campsiteMaintenanceRequest.submitMaintenanceRequest();

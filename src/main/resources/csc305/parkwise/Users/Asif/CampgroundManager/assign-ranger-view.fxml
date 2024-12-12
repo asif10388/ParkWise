@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.AssignRangerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="369.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.AssignRangerController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="369.0" prefWidth="600.0">
             <children>
@@ -22,11 +22,17 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <TableView prefHeight="200.0" prefWidth="600.0">
+                                        <TableView fx:id="campsiteBookingTableview" prefHeight="200.0" prefWidth="600.0">
                                             <columns>
-                                                <TableColumn prefWidth="75.0" text="C1" />
-                                                <TableColumn prefWidth="75.0" text="C2" />
+                                                <TableColumn fx:id="campsiteBookingIdColumn" prefWidth="75.0" text="Booking Id" />
+                                                <TableColumn fx:id="campsiteBookingCampsiteIdColumn" prefWidth="75.0" text="Campsite Id" />
+                                    <TableColumn fx:id="campsiteBookingUserIdColumn" prefWidth="75.0" text="User Id" />
+                                    <TableColumn fx:id="campsiteBookingCheckInDateColumn" prefWidth="75.0" text="Check In Date" />
+                                    <TableColumn fx:id="campsiteBookingCheckOutDateColumn" prefWidth="75.0" text="Check Out Date" />
                                             </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
                                         </TableView>
                                     </children>
                                 </AnchorPane>

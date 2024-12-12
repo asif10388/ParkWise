@@ -11,7 +11,7 @@ public class Campsite implements Serializable {
     private String maintenanceReason;
     private String currentReservedUserId;
 
-    public Campsite(int campsiteId, String campsiteName, String campsiteLocation, String campsiteStatus, double campsitePerDayFee, String maintenanceReason, String currentReservedUserId) {
+    public Campsite(int campsiteId, String campsiteName, String campsiteStatus, String campsiteLocation, double campsitePerDayFee, String maintenanceReason, String currentReservedUserId) {
         this.campsiteId = campsiteId;
         this.campsiteName = campsiteName;
         this.campsiteStatus = campsiteStatus;

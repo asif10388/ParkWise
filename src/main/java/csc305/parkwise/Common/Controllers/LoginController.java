@@ -53,7 +53,7 @@ public class LoginController
 
         StreamMapper stream = new StreamMapper();
         List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.UserObjects)
+                stream.getObjectStream(ObjectStreams.StaffObjects)
         );
 
         Optional<StaffAccount> findStaffAccount = userObjects.stream()

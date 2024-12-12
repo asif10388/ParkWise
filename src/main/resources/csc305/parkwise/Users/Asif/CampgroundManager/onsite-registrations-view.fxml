@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.CampsiteMaintenanceRequests.CampsiteMaintenanceRequestsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Asif.CampgroundManager.OnsiteRegistrationsComtroller">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
             <children>
@@ -23,7 +23,7 @@
                                             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                                 <children>
                                                     <Label text="Select Campsite" />
-                                                    <ComboBox fx:id="selectCampsiteCombobox" prefWidth="150.0" />
+                                                    <ComboBox fx:id="selectCampsiteCombobox" onAction="#onCampsiteValueSelected" prefWidth="150.0" />
                                                 </children>
                                                 <padding>
                                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -45,7 +45,7 @@
                                             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                                 <children>
                                                     <Label text="Check In Date" />
-                                    <DatePicker fx:id="checkInDatePicker" prefWidth="150.0" />
+                                    <DatePicker fx:id="checkInDatePicker" onAction="#onCheckInDateValueSelected" prefWidth="150.0" />
                                                 </children>
                                                 <padding>
                                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -54,7 +54,7 @@
                                             <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="250.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                                 <children>
                                                     <Label text="Check Out Date" />
-                                    <DatePicker fx:id="checkOutDatePicker" prefWidth="150.0" />
+                                    <DatePicker fx:id="checkOutDatePicker" onAction="#onCheckOutDateValueSelected" prefWidth="150.0" />
                                                 </children>
                                                 <padding>
                                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -88,7 +88,7 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="46.0" prefWidth="600.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                  <children>
-                                    <CheckBox fx:id="paidCheckbox" mnemonicParsing="false" text="Paid" />
+                                    <CheckBox fx:id="paidCheckbox" mnemonicParsing="false" onAction="#onPaidCheckboxSelected" text="Paid" />
                                  </children>
                                  <padding>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -98,7 +98,7 @@
                         </HBox>
                                     <HBox alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="56.0" prefWidth="600.0">
                                         <children>
-                                            <Button mnemonicParsing="false" onAction="#onReserveCampsiteButtonClick" text="Reserve Campsite" />
+                                            <Button fx:id="reserveCampsiteButton" mnemonicParsing="false" onAction="#onReserveCampsiteButtonClick" text="Reserve Campsite" />
                                         </children>
                                     </HBox>
                                 </children>

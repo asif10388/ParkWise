@@ -146,6 +146,7 @@ public class RestockSuppliesRequestController
                 1001,
                 "Pending",
                     priorityLevel,
+                    "Restock",
                     requiredAmount,
                     LocalDate.now(),
                     requestReason
