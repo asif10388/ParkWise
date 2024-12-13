@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.TicketOfficer.Onsiteticketsale">
+   <children>
+      <VBox alignment="CENTER" layoutX="64.0" layoutY="-3.0" prefHeight="68.0" prefWidth="537.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Label text="On-Site Ticket Sale Process" textFill="#f8f3f3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="402.0" prefWidth="67.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="7.0" prefWidth="54.0" text="Back" />
+         </children>
+      </VBox>
+      <ComboBox layoutX="183.0" layoutY="84.0" onAction="#TypesofTicketcomboBoxOnAction" prefWidth="150.0" />
+      <Label layoutX="87.0" layoutY="88.0" text="Types of Ticket" />
+      <TextField layoutX="184.0" layoutY="123.0" onAction="#NumberofTicketTextFieldOnAction" />
+      <Label layoutX="80.0" layoutY="127.0" text="Number of Ticket" />
+      <RadioButton layoutX="439.0" layoutY="205.0" mnemonicParsing="false" onAction="#CashRadioButtonOnAction" text="Cash" />
+      <RadioButton layoutX="439.0" layoutY="231.0" mnemonicParsing="false" onAction="#CreditCardRadioButtonOnAction" text="Credit Card" />
+      <Label layoutX="434.0" layoutY="170.0" text="Payment Method" />
+      <Button layoutX="448.0" layoutY="331.0" mnemonicParsing="false" onAction="#ProcessPaymentButtonOnAction" text="Process Payment" />
+      <CheckBox layoutX="136.0" layoutY="205.0" mnemonicParsing="false" onAction="#DiscountsCheckBoxOnAction" text="Discounts" />
+      <CheckBox layoutX="136.0" layoutY="231.0" mnemonicParsing="false" onAction="#SpecialOfferCheckBoxOnAction" text="Special Offer" />
+      <Label layoutX="122.0" layoutY="170.0" text="Requirements" />
+   </children>
+</AnchorPane>
