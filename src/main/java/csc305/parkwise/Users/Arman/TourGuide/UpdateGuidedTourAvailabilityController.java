@@ -2,7 +2,7 @@ package csc305.parkwise.Users.Arman.TourGuide;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.scene.control.TableColumn;
+import javafx.scene.control.*;
 
 public class UpdateGuidedTourAvailabilityController {
     @javafx.fxml.FXML
@@ -17,6 +17,36 @@ public class UpdateGuidedTourAvailabilityController {
     private TableColumn updateddate;
     @javafx.fxml.FXML
     private TableColumn UpdatedTime;
+    @javafx.fxml.FXML
+    private CheckBox EducationalTour;
+    @javafx.fxml.FXML
+    private ComboBox GuideAssingmentComboBox;
+    @javafx.fxml.FXML
+    private CheckBox NightSafariCheckBox;
+    @javafx.fxml.FXML
+    private CheckBox PhotographyWorkshop;
+    @javafx.fxml.FXML
+    private CheckBox WildLifeViewing;
+    @javafx.fxml.FXML
+    private Label BackButton;
+    @javafx.fxml.FXML
+    private CheckBox KayakingCheckBox;
+    @javafx.fxml.FXML
+    private ComboBox GroupNameComboBox;
+    @javafx.fxml.FXML
+    private TextField TimeTextfield;
+    @javafx.fxml.FXML
+    private TextField UpdateCapacityTextfield;
+    @javafx.fxml.FXML
+    private DatePicker DateDatePicker;
+    @javafx.fxml.FXML
+    private CheckBox BirdWatchingCheckBox;
+    @javafx.fxml.FXML
+    private Button SubmitButton;
+    @javafx.fxml.FXML
+    private TextField NoteTextfield;
+    @javafx.fxml.FXML
+    private TableView TableView;
 
     @javafx.fxml.FXML
     public void EducationalTourOnAction(ActionEvent actionEvent) {
@@ -42,7 +72,7 @@ public class UpdateGuidedTourAvailabilityController {
     public void NightSafariCheckBoxOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void UpdateCapacityOnAction(ActionEvent actionEvent) {
     }
 
@@ -72,5 +102,9 @@ public class UpdateGuidedTourAvailabilityController {
 
     @javafx.fxml.FXML
     public void NoteTextfieldOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void UpdateCapacityTextfieldOnAction(ActionEvent actionEvent) {
     }
 }

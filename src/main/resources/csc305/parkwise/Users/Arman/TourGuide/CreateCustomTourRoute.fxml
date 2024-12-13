@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="579.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.CreateCustomTourRouteController">
    <children>
       <HBox alignment="CENTER" layoutY="28.0" prefHeight="38.0" prefWidth="666.0" style="-fx-background-color: #285430;">
@@ -23,7 +22,7 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="7.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="19.0" prefWidth="13.0" text="↩">
+      <Label fx:id="BackButton" layoutX="7.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="19.0" prefWidth="13.0" text="↩">
          <font>
             <Font size="19.0" />
          </font>
@@ -33,20 +32,20 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="104.0" layoutY="134.0" onAction="#StartingTimeTextFieldOnAction" prefHeight="26.0" prefWidth="194.0" />
+      <TextField fx:id="StartingTimeTextField" layoutX="104.0" layoutY="134.0" onAction="#StartingTimeTextFieldOnAction" prefHeight="26.0" prefWidth="194.0" />
       <Label layoutX="21.0" layoutY="99.0" text="Group Name:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="104.0" layoutY="95.0" onAction="#GroupNameTextFieldOnAction" prefHeight="26.0" prefWidth="194.0" />
-      <DatePicker layoutX="57.0" layoutY="223.0" onAction="#DateDatePickerOnAction" />
+      <TextField fx:id="GroupNameTextField" layoutX="104.0" layoutY="95.0" onAction="#GroupNameTextFieldOnAction" prefHeight="26.0" prefWidth="194.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="57.0" layoutY="223.0" onAction="#DateDatePickerOnAction" />
       <Label layoutX="19.0" layoutY="227.0" text="Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="140.0" layoutY="177.0" onAction="#AvailableTimeSlotOnAction" prefHeight="26.0" prefWidth="156.0" />
+      <ComboBox fx:id="AvailableTimeSlot" layoutX="140.0" layoutY="177.0" onAction="#AvailableTimeSlotOnAction" prefHeight="26.0" prefWidth="156.0" />
       <Label layoutX="19.0" layoutY="182.0" text="Available Time Slot:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -57,23 +56,23 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="417.0" layoutY="107.0" onAction="#FirstLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="1st  Location" />
-      <ComboBox layoutX="417.0" layoutY="140.0" onAction="#seconfdLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="2nd Location" />
-      <ComboBox layoutX="417.0" layoutY="176.0" onAction="#thirdLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="3rd Location" />
-      <ComboBox layoutX="417.0" layoutY="214.0" onAction="#ForthLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="4th Location" />
-      <ComboBox layoutX="417.0" layoutY="248.0" onAction="#FifthLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="5th Location" />
+      <ComboBox fx:id="FirstLocationComboBox" layoutX="417.0" layoutY="107.0" onAction="#FirstLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="1st  Location" />
+      <ComboBox fx:id="seconfdLocationComboBox" layoutX="417.0" layoutY="140.0" onAction="#seconfdLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="2nd Location" />
+      <ComboBox fx:id="thirdLocationComboBox" layoutX="417.0" layoutY="176.0" onAction="#thirdLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="3rd Location" />
+      <ComboBox fx:id="ForthLocationComboBox" layoutX="417.0" layoutY="214.0" onAction="#ForthLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="4th Location" />
+      <ComboBox fx:id="FifthLocationComboBox" layoutX="417.0" layoutY="248.0" onAction="#FifthLocationComboBoxOnAction" prefHeight="26.0" prefWidth="227.0" promptText="5th Location" />
       <Label layoutX="417.0" layoutY="287.0" text="Stopping Point:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="417.0" layoutY="312.0" onAction="#StoppingPointComBoBoxOnAction" prefHeight="26.0" prefWidth="227.0" />
-      <Button layoutX="19.0" layoutY="313.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="66.0" text="Submit">
+      <ComboBox fx:id="StoppingPointComBoBox" layoutX="417.0" layoutY="312.0" onAction="#StoppingPointComBoBoxOnAction" prefHeight="26.0" prefWidth="227.0" />
+      <Button fx:id="SubmitButton" layoutX="19.0" layoutY="313.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="66.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TableView layoutX="10.0" layoutY="365.0" prefHeight="200.0" prefWidth="645.0">
+      <TableView fx:id="TableView" layoutX="10.0" layoutY="365.0" prefHeight="200.0" prefWidth="645.0">
         <columns>
           <TableColumn fx:id="SerialNumber" prefWidth="100.79998588562012" text="Serial No." />
           <TableColumn fx:id="CheckPoints" prefWidth="154.40000915527344" text="Check-Points" />
@@ -87,6 +86,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="201.0" layoutY="262.0" onAction="#StoppingTimeDurationOnAction" prefHeight="26.0" prefWidth="149.0" />
+      <TextField fx:id="StoppingTimeDurationTextfield" layoutX="201.0" layoutY="262.0" onAction="#StoppingTimeDurationTextfieldOnAction" prefHeight="26.0" prefWidth="149.0" />
    </children>
 </AnchorPane>

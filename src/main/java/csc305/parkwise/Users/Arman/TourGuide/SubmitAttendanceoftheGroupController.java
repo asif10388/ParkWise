@@ -2,8 +2,32 @@ package csc305.parkwise.Users.Arman.TourGuide;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.scene.control.*;
 
 public class SubmitAttendanceoftheGroupController {
+    @javafx.fxml.FXML
+    private DatePicker DateDatepicker;
+    @javafx.fxml.FXML
+    private ComboBox GuideNameCoomboBox;
+    @javafx.fxml.FXML
+    private CheckBox CollectedCheckBox;
+    @javafx.fxml.FXML
+    private TextField AdditionalNoteTextfield;
+    @javafx.fxml.FXML
+    private Label BackButton;
+    @javafx.fxml.FXML
+    private CheckBox PresentCheckBox;
+    @javafx.fxml.FXML
+    private CheckBox AbsentCheckbox;
+    @javafx.fxml.FXML
+    private TextField ReasonForAbsenceTextfield;
+    @javafx.fxml.FXML
+    private ComboBox GroupNameComboBox;
+    @javafx.fxml.FXML
+    private TextField TimeTextfield;
+    @javafx.fxml.FXML
+    private Button SubmitButton;
+
     @javafx.fxml.FXML
     public void CollectedCheckBoxOnAction(ActionEvent actionEvent) {
     }
@@ -46,5 +70,9 @@ public class SubmitAttendanceoftheGroupController {
 
     @javafx.fxml.FXML
     public void DateDatepickerOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void SubmitButtonOnAction(ActionEvent actionEvent) {
     }
 }

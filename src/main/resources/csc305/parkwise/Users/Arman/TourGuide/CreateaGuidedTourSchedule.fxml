@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="560.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.TourGuide.CreateaGuidedTourScheduleController">
    <children>
       <HBox alignment="CENTER" layoutY="28.0" prefHeight="35.0" prefWidth="636.0" style="-fx-background-color: #285430;">
@@ -24,7 +23,7 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
+      <Label fx:id="BackButton" layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
          <font>
             <Font size="19.0" />
          </font>
@@ -34,14 +33,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="90.0" layoutY="120.0" onAction="#TimeTextfieldOnAction" prefHeight="26.0" prefWidth="175.0" />
-      <DatePicker layoutX="90.0" layoutY="80.0" onAction="#DateDatePickerOnAction" />
+      <TextField fx:id="TimeTextfield" layoutX="90.0" layoutY="120.0" onAction="#TimeTextfieldOnAction" prefHeight="26.0" prefWidth="175.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="90.0" layoutY="80.0" onAction="#DateDatePickerOnAction" />
       <Label layoutX="14.0" layoutY="124.0" text="Tour Time:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="450.0" layoutY="76.0" onAction="#LocationComboBoxOnAction" prefHeight="26.0" prefWidth="164.0" />
+      <ComboBox fx:id="LocationComboBox" layoutX="450.0" layoutY="76.0" onAction="#LocationComboBoxOnAction" prefHeight="26.0" prefWidth="164.0" />
       <Label layoutX="383.0" layoutY="80.0" text="Location:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -57,37 +56,37 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="90.0" layoutY="191.0" onAction="#GroupSizeComboBoxOnAction" prefHeight="26.0" prefWidth="154.0" />
+      <ComboBox fx:id="GroupSizeComboBox" layoutX="90.0" layoutY="191.0" onAction="#GroupSizeComboBoxOnAction" prefHeight="26.0" prefWidth="154.0" />
       <Label layoutX="13.0" layoutY="165.0" text="Total Group member:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="145.0" layoutY="158.0" onAction="#TotalGroupNumberOnAction" prefHeight="26.0" prefWidth="154.0" />
+      <TextField fx:id="TotalGroupNumberTextfield" layoutX="145.0" layoutY="158.0" onAction="#TotalGroupNumberTextfieldOnAction" prefHeight="26.0" prefWidth="154.0" />
       <Label layoutX="14.0" layoutY="297.0" text="Guide:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="57.0" layoutY="292.0" onAction="#GuideComboBoxOnAction" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox fx:id="GuideComboBox" layoutX="57.0" layoutY="292.0" onAction="#GuideComboBoxOnAction" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="380.0" layoutY="267.0" text="Transport:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="446.0" layoutY="262.0" onAction="#TransportComboBoxOnAction" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox fx:id="TransportComboBox" layoutX="446.0" layoutY="262.0" onAction="#TransportComboBoxOnAction" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="12.0" layoutY="230.0" text="Note:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="55.0" layoutY="230.0" onAction="#NoteTextfieldOnAction" prefHeight="46.0" prefWidth="175.0" />
-      <Button layoutX="565.0" layoutY="308.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" text="Submit">
+      <TextField fx:id="NoteTextfield" layoutX="55.0" layoutY="230.0" onAction="#NoteTextfieldOnAction" prefHeight="46.0" prefWidth="175.0" />
+      <Button fx:id="SubmitButton" layoutX="565.0" layoutY="308.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <TableView layoutX="14.0" layoutY="346.0" prefHeight="200.0" prefWidth="607.0">
+      <TableView fx:id="TableView" layoutX="14.0" layoutY="346.0" prefHeight="200.0" prefWidth="607.0">
         <columns>
           <TableColumn fx:id="Date" prefWidth="75.0" text="Date" />
           <TableColumn fx:id="Time" prefWidth="75.0" text="Time" />
@@ -98,11 +97,11 @@
             <TableColumn fx:id="transport" prefWidth="125.59994506835938" text="Transport" />
         </columns>
       </TableView>
-      <CheckBox layoutX="383.0" layoutY="141.0" mnemonicParsing="false" onAction="#KayakingCheckBoxOnAction" text="Kayaking" />
-      <CheckBox layoutX="508.0" layoutY="170.0" mnemonicParsing="false" onAction="#NightSafariCheckBoxOnAction" text="Night Safari" />
-      <CheckBox layoutX="384.0" layoutY="170.0" mnemonicParsing="false" onAction="#WildLifeViewingOnAction" text="Wildlife Viewing " />
-      <CheckBox layoutX="384.0" layoutY="200.0" mnemonicParsing="false" onAction="#EducationalTourOnAction" text="Educational Tour" />
-      <CheckBox layoutX="498.0" layoutY="140.0" mnemonicParsing="false" onAction="#BirdWatchingCheckBoxOnAction" prefHeight="18.0" prefWidth="106.0" text="Bird Watching" />
-      <CheckBox layoutX="383.0" layoutY="230.0" mnemonicParsing="false" onAction="#PhotographyWorkshopOnAction" text="Photography Workshop" />
+      <CheckBox fx:id="KayakingCheckBox" layoutX="383.0" layoutY="141.0" mnemonicParsing="false" onAction="#KayakingCheckBoxOnAction" text="Kayaking" />
+      <CheckBox fx:id="NightSafariCheckBox" layoutX="508.0" layoutY="170.0" mnemonicParsing="false" onAction="#NightSafariCheckBoxOnAction" text="Night Safari" />
+      <CheckBox fx:id="WildLifeViewing" layoutX="384.0" layoutY="170.0" mnemonicParsing="false" onAction="#WildLifeViewingOnAction" text="Wildlife Viewing " />
+      <CheckBox fx:id="EducationalTour" layoutX="384.0" layoutY="200.0" mnemonicParsing="false" onAction="#EducationalTourOnAction" text="Educational Tour" />
+      <CheckBox fx:id="BirdWatchingCheckBox" layoutX="498.0" layoutY="140.0" mnemonicParsing="false" onAction="#BirdWatchingCheckBoxOnAction" prefHeight="18.0" prefWidth="106.0" text="Bird Watching" />
+      <CheckBox fx:id="PhotographyWorkshop" layoutX="383.0" layoutY="230.0" mnemonicParsing="false" onAction="#PhotographyWorkshopOnAction" text="Photography Workshop" />
    </children>
 </AnchorPane>

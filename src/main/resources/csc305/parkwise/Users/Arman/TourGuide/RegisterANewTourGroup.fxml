@@ -23,7 +23,7 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
+      <Label fx:id="BackButton" layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
          <font>
             <Font size="19.0" />
          </font>
@@ -33,14 +33,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="102.0" layoutY="80.0" onAction="#GroupNameTextFieldOnAction" prefHeight="26.0" prefWidth="226.0" />
+      <TextField fx:id="GroupNameTextField" layoutX="102.0" layoutY="80.0" onAction="#GroupNameTextFieldOnAction" prefHeight="26.0" prefWidth="226.0" />
       <Label layoutX="20.0" layoutY="127.0" text="Number of People:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="132.0" layoutY="123.0" onAction="#NumberOfPeopleTextFieldOnAction" prefHeight="26.0" prefWidth="196.0" />
-      <DatePicker layoutX="109.0" layoutY="204.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="219.0" />
+      <TextField fx:id="NumberOfPeopleTextField" layoutX="132.0" layoutY="123.0" onAction="#NumberOfPeopleTextFieldOnAction" prefHeight="26.0" prefWidth="196.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="109.0" layoutY="204.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="219.0" />
       <Label layoutX="23.0" layoutY="208.0" text="Date:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -51,29 +51,29 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="121.0" layoutY="242.0" onAction="#TimeSlotComboBoxOnAction" prefHeight="26.0" prefWidth="207.0" />
+      <ComboBox fx:id="TimeSlotComboBox" layoutX="121.0" layoutY="242.0" onAction="#TimeSlotComboBoxOnAction" prefHeight="26.0" prefWidth="207.0" />
       <Label layoutX="21.0" layoutY="168.0" text="Group Size:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="109.0" layoutY="164.0" onAction="#GroupSizeComboBoxOnAction" prefHeight="26.0" prefWidth="219.0" />
+      <ComboBox fx:id="GroupSizeComboBox" layoutX="109.0" layoutY="164.0" onAction="#GroupSizeComboBoxOnAction" prefHeight="26.0" prefWidth="219.0" />
       <Label layoutX="23.0" layoutY="288.0" text="ToutType:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="489.0" layoutY="110.0" mnemonicParsing="false" onAction="#AccessibilityNeedsCheckBoxOnAction" text="Accessibility Needs" />
+      <CheckBox fx:id="AccessibilityNeedsCheckBox" layoutX="489.0" layoutY="110.0" mnemonicParsing="false" onAction="#AccessibilityNeedsCheckBoxOnAction" text="Accessibility Needs" />
       <Label layoutX="490.0" layoutY="84.0" prefHeight="18.0" prefWidth="130.0" text="Special Requirements:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="489.0" layoutY="136.0" mnemonicParsing="false" onAction="#DietaryPreferencesOrRestrictionsCheckBoxOnAction" text="Dietary Preferences/Restrictions" />
-      <CheckBox layoutX="489.0" layoutY="164.0" mnemonicParsing="false" onAction="#PetFriendlyRequestCheckBoxOnAction" text="Pet-Friendly Request" />
-      <CheckBox layoutX="490.0" layoutY="191.0" mnemonicParsing="false" onAction="#PhotographyPreferencesCheckBoxOnAction" prefHeight="18.0" prefWidth="166.0" text="Photography Preferences" />
-      <CheckBox layoutX="490.0" layoutY="217.0" mnemonicParsing="false" onAction="#AdditionalNotesCheckBoxOnAction" prefHeight="18.0" prefWidth="123.0" text="Additional Notes" />
-      <TableView layoutX="20.0" layoutY="355.0" prefHeight="230.0" prefWidth="802.0">
+      <CheckBox fx:id="DietaryPreferencesOrRestrictionsCheckBox" layoutX="489.0" layoutY="136.0" mnemonicParsing="false" onAction="#DietaryPreferencesOrRestrictionsCheckBoxOnAction" text="Dietary Preferences/Restrictions" />
+      <CheckBox fx:id="PetFriendlyRequestCheckBox" layoutX="489.0" layoutY="164.0" mnemonicParsing="false" onAction="#PetFriendlyRequestCheckBoxOnAction" text="Pet-Friendly Request" />
+      <CheckBox fx:id="PhotographyPreferencesCheckBox" layoutX="490.0" layoutY="191.0" mnemonicParsing="false" onAction="#PhotographyPreferencesCheckBoxOnAction" prefHeight="18.0" prefWidth="166.0" text="Photography Preferences" />
+      <CheckBox fx:id="AdditionalNotesCheckBox" layoutX="490.0" layoutY="217.0" mnemonicParsing="false" onAction="#AdditionalNotesCheckBoxOnAction" prefHeight="18.0" prefWidth="123.0" text="Additional Notes" />
+      <TableView fx:id="Tableview" layoutX="20.0" layoutY="355.0" prefHeight="230.0" prefWidth="802.0">
         <columns>
           <TableColumn fx:id="RecordID" prefWidth="75.0" text="Record ID" />
           <TableColumn fx:id="GroupName" prefWidth="104.800048828125" text="Group Name" />
@@ -89,7 +89,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <ComboBox layoutX="121.0" layoutY="283.0" onAction="#TourTypeComboBoxOnAction" prefHeight="26.0" prefWidth="207.0" />
-      <TextField alignment="TOP_LEFT" layoutX="490.0" layoutY="252.0" onAction="#AdditionalNotesTextFieldOnAction" prefHeight="62.0" prefWidth="332.0" />
+      <ComboBox fx:id="TourTypeComboBox" layoutX="121.0" layoutY="283.0" onAction="#TourTypeComboBoxOnAction" prefHeight="26.0" prefWidth="207.0" />
+      <TextField fx:id="AdditionalNotesTextField" alignment="TOP_LEFT" layoutX="490.0" layoutY="252.0" onAction="#AdditionalNotesTextFieldOnAction" prefHeight="62.0" prefWidth="332.0" />
    </children>
 </AnchorPane>
