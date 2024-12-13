@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="437.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.ScheduleandPlanFieldResearchActivitesController">
    <children>
       <HBox alignment="CENTER" layoutY="31.0" prefHeight="35.0" prefWidth="704.0" style="-fx-background-color: #285430;">
@@ -23,7 +22,7 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
+      <Label fx:id="BackButton" layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" text="↩">
          <font>
             <Font size="19.0" />
          </font>
@@ -33,43 +32,43 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="115.0" layoutY="81.0" onAction="#ResearchTypeTextfieldOnAction" prefHeight="26.0" prefWidth="179.0" />
+      <TextField fx:id="ResearchTypeTextfield" layoutX="115.0" layoutY="81.0" onAction="#ResearchTypeTextfieldOnAction" prefHeight="26.0" prefWidth="179.0" />
       <Label layoutX="27.0" layoutY="166.0" text="Location:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="115.0" layoutY="161.0" onAction="#LocationComboBoxOnAction" prefHeight="26.0" prefWidth="179.0" />
+      <ComboBox fx:id="LocationComboBox" layoutX="115.0" layoutY="161.0" onAction="#LocationComboBoxOnAction" prefHeight="26.0" prefWidth="179.0" />
       <Label layoutX="27.0" layoutY="125.0" text="StartDate:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="115.0" layoutY="120.0" onAction="#StartdateDatepickerOnAction" prefHeight="26.0" prefWidth="179.0" />
+      <DatePicker fx:id="StartdateDatepicker" layoutX="115.0" layoutY="120.0" onAction="#StartdateDatepickerOnAction" prefHeight="26.0" prefWidth="179.0" />
       <Label layoutX="427.0" layoutY="124.0" text="EndDate:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="495.0" layoutY="120.0" onAction="#EndDateDatePpickerOnAction" prefHeight="26.0" prefWidth="179.0" />
+      <DatePicker fx:id="EndDateDatePpicker" layoutX="495.0" layoutY="120.0" onAction="#EndDateDatePpickerOnAction" prefHeight="26.0" prefWidth="179.0" />
       <Label layoutX="379.0" layoutY="86.0" text="Assigned Personal:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="496.0" layoutY="81.0" onAction="#AssingnedPersonalComboBoxOnAction" prefHeight="26.0" prefWidth="179.0" />
-      <TableView layoutX="5.0" layoutY="200.0" prefHeight="226.0" prefWidth="693.0">
+      <ComboBox fx:id="AssingnedPersonalComboBox" layoutX="496.0" layoutY="81.0" onAction="#AssingnedPersonalComboBoxOnAction" prefHeight="26.0" prefWidth="179.0" />
+      <TableView fx:id="Tableview" layoutX="5.0" layoutY="200.0" prefHeight="226.0" prefWidth="693.0">
         <columns>
-          <TableColumn prefWidth="81.59994220733643" text="Research ID" />
-          <TableColumn prefWidth="100.79998779296875" text="Research Type" />
-            <TableColumn prefWidth="104.80000305175781" text="Location Data" />
-            <TableColumn prefWidth="87.20001220703125" text="Start Date" />
-            <TableColumn prefWidth="80.79998779296875" text="End Date" />
-            <TableColumn prefWidth="125.60003662109375" text="Assinged Personal" />
-            <TableColumn prefWidth="111.20001220703125" text="Status" />
+          <TableColumn fx:id="ResearchID" prefWidth="81.59994220733643" text="Research ID" />
+          <TableColumn fx:id="ResearchType" prefWidth="100.79998779296875" text="Research Type" />
+            <TableColumn fx:id="LocationData" prefWidth="104.80000305175781" text="Location Data" />
+            <TableColumn fx:id="StartDate" prefWidth="87.20001220703125" text="Start Date" />
+            <TableColumn fx:id="EndDate" prefWidth="80.79998779296875" text="End Date" />
+            <TableColumn fx:id="AssingedPersonal" prefWidth="125.60003662109375" text="Assinged Personal" />
+            <TableColumn fx:id="Status" prefWidth="111.20001220703125" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="605.0" layoutY="161.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="69.0" text="Submit">
+      <Button fx:id="SubmitButton" layoutX="605.0" layoutY="161.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="69.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

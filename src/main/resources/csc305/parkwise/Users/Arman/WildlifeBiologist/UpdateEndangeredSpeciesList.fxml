@@ -41,15 +41,15 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <ComboBox layoutX="128.0" layoutY="94.0" onAction="#SpeciesNameComboBoxOnAction" prefHeight="26.0" prefWidth="144.0">
+      <ComboBox fx:id="SpeciesNameComboBox" layoutX="128.0" layoutY="94.0" onAction="#SpeciesNameComboBoxOnAction" prefHeight="26.0" prefWidth="144.0">
          <effect>
             <Blend />
          </effect></ComboBox>
-      <TextField alignment="TOP_LEFT" layoutX="84.0" layoutY="140.0" onAction="#StatusTextfieldOnAction" prefHeight="26.0" prefWidth="190.0">
+      <TextField fx:id="StatusTextfield" alignment="TOP_LEFT" layoutX="84.0" layoutY="140.0" onAction="#StatusTextfieldOnAction" prefHeight="26.0" prefWidth="190.0">
          <effect>
             <Blend />
          </effect></TextField>
-      <Button layoutX="455.0" layoutY="185.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="28.0" prefWidth="89.0" text="Submit">
+      <Button fx:id="SubmitButton" layoutX="455.0" layoutY="185.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="28.0" prefWidth="89.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -57,29 +57,29 @@
             <Blend />
          </effect>
       </Button>
-      <ComboBox layoutX="97.0" layoutY="186.0" onAction="#LocationComboBoxOnAction" prefHeight="26.0" prefWidth="176.0">
+      <ComboBox fx:id="LocationComboBox" layoutX="97.0" layoutY="186.0" onAction="#LocationComboBoxOnAction" prefHeight="26.0" prefWidth="176.0">
          <effect>
             <Blend />
          </effect>
       </ComboBox>
       <VBox layoutX="29.0" layoutY="230.0" prefHeight="38.0" prefWidth="48.0" />
-      <Label layoutX="12.0" layoutY="-3.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="38.0" prefWidth="29.0" text="↩">
+      <Label fx:id="BackButton" layoutX="12.0" layoutY="-3.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="38.0" prefWidth="29.0" text="↩">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <DatePicker layoutX="364.0" layoutY="144.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="182.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="364.0" layoutY="144.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="182.0" />
       <Label layoutX="320.0" layoutY="148.0" text="Date:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TableView layoutX="29.0" layoutY="230.0" prefHeight="200.0" prefWidth="517.0">
+      <TableView fx:id="Tableview" layoutX="29.0" layoutY="230.0" prefHeight="200.0" prefWidth="517.0">
         <columns>
-          <TableColumn prefWidth="115.20001220703125" text="Species Name" />
-          <TableColumn prefWidth="124.79998779296875" text="Status" />
-            <TableColumn prefWidth="149.5999755859375" text="Location" />
-            <TableColumn prefWidth="128.79998779296875" text="Last Updated Date" />
+          <TableColumn fx:id="SpeciesName" prefWidth="115.20001220703125" text="Species Name" />
+          <TableColumn fx:id="Status" prefWidth="124.79998779296875" text="Status" />
+            <TableColumn fx:id="Location" prefWidth="149.5999755859375" text="Location" />
+            <TableColumn fx:id="LastUpdatedDate" prefWidth="128.79998779296875" text="Last Updated Date" />
         </columns>
       </TableView>
       <Label layoutX="320.0" layoutY="96.0" text="Time:">
@@ -87,7 +87,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField alignment="TOP_LEFT" layoutX="364.0" layoutY="93.0" onAction="#TimeTextfieldOnAction" prefHeight="26.0" prefWidth="182.0">
+      <TextField fx:id="TimeTextfield" alignment="TOP_LEFT" layoutX="364.0" layoutY="93.0" onAction="#TimeTextfieldOnAction" prefHeight="26.0" prefWidth="182.0">
          <effect>
             <Blend />
          </effect>

@@ -2,8 +2,26 @@ package csc305.parkwise.Users.Arman.WildlifeBiologist;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
+import javafx.scene.control.*;
 
 public class PublishResearchSummaryforPublicEducationController {
+    @javafx.fxml.FXML
+    private DatePicker PublicationDateDatePicker;
+    @javafx.fxml.FXML
+    private ComboBox UserIDComboBox;
+    @javafx.fxml.FXML
+    private TextField NameTextField;
+    @javafx.fxml.FXML
+    private Label BackButton;
+    @javafx.fxml.FXML
+    private ComboBox TargetAudienceComboBox;
+    @javafx.fxml.FXML
+    private TextField ResearchTitleTextField;
+    @javafx.fxml.FXML
+    private TextField ResearchHighlightTextField;
+    @javafx.fxml.FXML
+    private Button SubmitButton;
+
     @javafx.fxml.FXML
     public void ResearchTitleTextFieldOnAction(ActionEvent actionEvent) {
     }

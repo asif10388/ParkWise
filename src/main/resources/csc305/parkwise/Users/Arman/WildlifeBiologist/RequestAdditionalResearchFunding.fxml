@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.RequestAdditionalResearchFundingController">
    <children>
       <HBox alignment="CENTER" layoutY="28.0" prefHeight="47.0" prefWidth="600.0" style="-fx-background-color: #285430;">
@@ -22,7 +21,7 @@
             </Label>
          </children>
       </HBox>
-      <Label layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="9.0" prefWidth="14.0" text="↩">
+      <Label fx:id="BackButton" layoutX="14.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="9.0" prefWidth="14.0" text="↩">
          <font>
             <Font size="19.0" />
          </font>
@@ -32,8 +31,8 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="66.0" layoutY="100.0" onAction="#DateDatePickerOnAction" />
-      <TextField layoutX="420.0" layoutY="100.0" onAction="#AmountTextfieldOnAction">
+      <DatePicker fx:id="DateDatePicker" layoutX="66.0" layoutY="100.0" onAction="#DateDatePickerOnAction" />
+      <TextField fx:id="AmountTextfield" layoutX="420.0" layoutY="100.0" onAction="#AmountTextfieldOnAction">
          <effect>
             <Reflection />
          </effect>
@@ -43,14 +42,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="42.0" layoutY="174.0" mnemonicParsing="false" onAction="#InsufficientGrantOpportunitiesOnAction" text="Insufficient Grant Opportunities" />
-      <CheckBox layoutX="42.0" layoutY="200.0" mnemonicParsing="false" onAction="#BudgetConstraintsOnAction" text="Budget Constraints" />
-      <CheckBox layoutX="42.0" layoutY="224.0" mnemonicParsing="false" onAction="#DependenceOnDonorFundingOnAction" text="Dependence on Donor Funding" />
-      <CheckBox layoutX="42.0" layoutY="250.0" mnemonicParsing="false" onAction="#RegulatoryComplianceCostsOnAction" text="Regulatory Compliance Costs" />
-      <CheckBox layoutX="42.0" layoutY="278.0" mnemonicParsing="false" onAction="#TechnologyAndEquipmentCostsOnAction" text="Technology and Equipment Costs" />
-      <CheckBox layoutX="42.0" layoutY="306.0" mnemonicParsing="false" onAction="#PersonnelAndTrainingCostsOnAction" text="Personnel and Training Costs" />
-      <CheckBox layoutX="42.0" layoutY="334.0" mnemonicParsing="false" onAction="#SustainabilityofFundingOnAction" text="Sustainability of Funding" />
-      <CheckBox layoutX="42.0" layoutY="362.0" mnemonicParsing="false" onAction="#PublicInterestAndAwarenessOnAction" text="Public Interest and Awareness" />
+      <CheckBox fx:id="InsufficientGrantOpportunities" layoutX="42.0" layoutY="174.0" mnemonicParsing="false" onAction="#InsufficientGrantOpportunitiesOnAction" text="Insufficient Grant Opportunities" />
+      <CheckBox fx:id="BudgetConstraints" layoutX="42.0" layoutY="200.0" mnemonicParsing="false" onAction="#BudgetConstraintsOnAction" text="Budget Constraints" />
+      <CheckBox fx:id="DependenceOnDonorFundingOnAction" layoutX="42.0" layoutY="224.0" mnemonicParsing="false" onAction="#DependenceOnDonorFundingOnAction" text="Dependence on Donor Funding" />
+      <CheckBox fx:id="RegulatoryComplianceCosts" layoutX="42.0" layoutY="250.0" mnemonicParsing="false" onAction="#RegulatoryComplianceCostsOnAction" text="Regulatory Compliance Costs" />
+      <CheckBox fx:id="TechnologyAndEquipmentCosts" layoutX="42.0" layoutY="278.0" mnemonicParsing="false" onAction="#TechnologyAndEquipmentCostsOnAction" text="Technology and Equipment Costs" />
+      <CheckBox fx:id="PersonnelAndTrainingCosts" layoutX="42.0" layoutY="306.0" mnemonicParsing="false" onAction="#PersonnelAndTrainingCostsOnAction" text="Personnel and Training Costs" />
+      <CheckBox fx:id="SustainabilityofFunding" layoutX="42.0" layoutY="334.0" mnemonicParsing="false" onAction="#SustainabilityofFundingOnAction" text="Sustainability of Funding" />
+      <CheckBox fx:id="PublicInterestAndAwareness" layoutX="42.0" layoutY="362.0" mnemonicParsing="false" onAction="#PublicInterestAndAwarenessOnAction" text="Public Interest and Awareness" />
       <Label layoutX="28.0" layoutY="145.0" prefHeight="19.0" prefWidth="124.0" text="Research Objectives:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -61,12 +60,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="329.0" layoutY="168.0" onAction="#supplementaryResearchGoalTextfield" prefHeight="81.0" prefWidth="242.0">
+      <TextField fx:id="supplementaryResearchGoalTextfield" layoutX="329.0" layoutY="168.0" onAction="#supplementaryResearchGoalTextfieldOnAction" prefHeight="81.0" prefWidth="242.0">
          <effect>
             <Reflection />
          </effect>
       </TextField>
-      <Button layoutX="495.0" layoutY="343.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="37.0" prefWidth="74.0" text="Submit">
+      <Button fx:id="SubmitButton" layoutX="495.0" layoutY="343.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="37.0" prefWidth="74.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

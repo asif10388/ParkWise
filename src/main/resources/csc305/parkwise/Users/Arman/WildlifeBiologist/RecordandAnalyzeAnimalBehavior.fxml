@@ -23,19 +23,19 @@
             </Label>
          </children>
       </HBox>
-      <ComboBox layoutX="130.0" layoutY="97.0" onAction="#AnimalSpeciesComboboxOnAction" prefWidth="150.0" />
-      <TextField layoutX="119.0" layoutY="145.0" onAction="#EventTimeTextFieldOnAction" prefHeight="26.0" prefWidth="162.0">
+      <ComboBox fx:id="AnimalSpeciesCombobox" layoutX="130.0" layoutY="97.0" onAction="#AnimalSpeciesComboboxOnAction" prefWidth="150.0" />
+      <TextField fx:id="EventTimeTextField" layoutX="119.0" layoutY="145.0" onAction="#EventTimeTextFieldOnAction" prefHeight="26.0" prefWidth="162.0">
          <effect>
             <Blend />
          </effect>
       </TextField>
-      <ComboBox layoutX="420.0" layoutY="97.0" onAction="#AnimalBehaviorComboBoxOnAction" prefWidth="150.0" />
-      <TextField layoutX="319.0" layoutY="166.0" onAction="#AdditionalRecordOnAction" prefHeight="38.0" prefWidth="250.0">
+      <ComboBox fx:id="AnimalBehaviorComboBox" layoutX="420.0" layoutY="97.0" onAction="#AnimalBehaviorComboBoxOnAction" prefWidth="150.0" />
+      <TextField fx:id="AdditionalRecordTextField" layoutX="319.0" layoutY="166.0" onAction="#AdditionalRecordTextFiledOnAction" prefHeight="38.0" prefWidth="250.0">
          <effect>
             <Blend />
          </effect>
       </TextField>
-      <Button layoutX="506.0" layoutY="217.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
+      <Button fx:id="SubmitButton" layoutX="506.0" layoutY="217.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -60,25 +60,25 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="6.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="28.0" prefWidth="24.0" text="↩">
+      <Label fx:id="Back" layoutX="14.0" layoutY="6.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="28.0" prefWidth="24.0" text="↩">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <DatePicker layoutX="98.0" layoutY="195.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="180.0" />
+      <DatePicker fx:id="DateDatePicker" layoutX="98.0" layoutY="195.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="180.0" />
       <Label layoutX="32.0" layoutY="199.0" text="Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TableView layoutX="24.0" layoutY="254.0" prefHeight="206.0" prefWidth="554.0">
+      <TableView fx:id="Tableview" layoutX="24.0" layoutY="254.0" prefHeight="206.0" prefWidth="554.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Record ID" />
-          <TableColumn prefWidth="101.59998321533203" text="Animal Species" />
-            <TableColumn prefWidth="89.5999755859375" text="Action Type" />
-            <TableColumn prefWidth="89.5999755859375" text="Location" />
-            <TableColumn prefWidth="89.5999755859375" text="Event Time" />
-            <TableColumn prefWidth="108.0000061035156" text="Additional notes" />
+          <TableColumn fx:id="RecordID" prefWidth="75.0" text="Record ID" />
+          <TableColumn fx:id="AnimalSpecies" prefWidth="101.59998321533203" text="Animal Species" />
+            <TableColumn fx:id="ActionType" prefWidth="89.5999755859375" text="Action Type" />
+            <TableColumn fx:id="Location" prefWidth="89.5999755859375" text="Location" />
+            <TableColumn fx:id="EventTime" prefWidth="89.5999755859375" text="Event Time" />
+            <TableColumn fx:id="Additionalnotes" prefWidth="108.0000061035156" text="Additional notes" />
         </columns>
       </TableView>
    </children>
