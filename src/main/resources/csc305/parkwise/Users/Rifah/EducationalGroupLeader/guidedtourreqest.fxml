@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.Guidedtourreqest">
    <children>
       <VBox alignment="CENTER" layoutX="57.0" prefHeight="85.0" prefWidth="553.0" style="-fx-background-color: Darkgreen;">
@@ -26,25 +25,25 @@
       </VBox>
       <VBox layoutX="-4.0" prefHeight="400.0" prefWidth="63.0" style="-fx-background-color: DarkGreen;">
          <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Back" />
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Back" />
          </children>
       </VBox>
-      <ComboBox layoutX="146.0" layoutY="94.0" prefWidth="150.0" />
-      <ComboBox layoutX="146.0" layoutY="128.0" prefWidth="150.0" />
+      <ComboBox fx:id="LanguageComboBoxOnAction" layoutX="146.0" layoutY="94.0" prefWidth="150.0" />
+      <ComboBox fx:id="TourThemeComboBoxOnAction" layoutX="146.0" layoutY="128.0" prefWidth="150.0" />
       <TextField fx:id="ParticipantsNumberTextFieldOnAction" layoutX="436.0" layoutY="94.0" />
-      <TextArea layoutX="436.0" layoutY="128.0" prefHeight="40.0" prefWidth="149.0" />
-      <Button layoutX="458.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Reserve Slot" />
+      <TextArea fx:id="RequirementTextAreaOnAction" layoutX="436.0" layoutY="128.0" prefHeight="40.0" prefWidth="149.0" />
+      <Button fx:id="ReserveSlotButtonOnAction" layoutX="458.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Reserve Slot" />
       <Label layoutX="86.0" layoutY="98.0" text="Language" />
       <Label layoutX="76.0" layoutY="132.0" prefHeight="17.0" prefWidth="71.0" text="Tour Theme" />
       <Label layoutX="86.0" layoutY="165.0" text="Age range" />
       <Label layoutX="318.0" layoutY="98.0" prefHeight="17.0" prefWidth="123.0" text="Participants Number :" />
       <Label layoutX="351.0" layoutY="141.0" prefHeight="17.0" prefWidth="87.0" text="Requirement :" />
-      <RadioButton layoutX="458.0" layoutY="228.0" mnemonicParsing="false" text="RadioButton" />
-      <RadioButton layoutX="458.0" layoutY="252.0" mnemonicParsing="false" text="RadioButton" />
-      <RadioButton layoutX="458.0" layoutY="276.0" mnemonicParsing="false" text="RadioButton" />
-      <TextField layoutX="147.0" layoutY="161.0" />
-      <Button layoutX="511.0" layoutY="347.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="Submit" />
-      <TableView layoutX="86.0" layoutY="219.0" prefHeight="131.0" prefWidth="304.0">
+      <RadioButton fx:id="Slot1RadioButtonOnAction" layoutX="458.0" layoutY="228.0" mnemonicParsing="false" onAction="#Slot1RadioButtonOnAction" text="Slot1" />
+      <RadioButton fx:id="Slot2RadioButtonOnAction" layoutX="458.0" layoutY="252.0" mnemonicParsing="false" onAction="#Slot2RadioButtonOnAction" text="Slot2" />
+      <RadioButton fx:id="Slot3RadioButtonOnAction" layoutX="458.0" layoutY="276.0" mnemonicParsing="false" onAction="#Slot3RadioButtonOnAction" text="Slot3" />
+      <TextField fx:id="AgeRangeTextFieldOnAction" layoutX="147.0" layoutY="161.0" />
+      <Button fx:id="SubmitButtonOnAction" layoutX="511.0" layoutY="347.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="Submit" />
+      <TableView fx:id="TableViewOnAction" layoutX="86.0" layoutY="219.0" prefHeight="131.0" prefWidth="304.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Tour Name" />
           <TableColumn prefWidth="75.0" text="    Date" />

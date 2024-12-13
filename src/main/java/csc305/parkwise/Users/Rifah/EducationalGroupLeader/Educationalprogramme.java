@@ -3,6 +3,19 @@ package csc305.parkwise.Users.Rifah.EducationalGroupLeader;
 public class Educationalprogramme
 {
     @javafx.fxml.FXML
+    private ComboBox ProgrammeTopicComboBoxOnAction;
+    @javafx.fxml.FXML
+    private Button SelectProgrammeButtonOnAction;
+    @javafx.fxml.FXML
+    private DatePicker SessionDateDatePickerOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private ComboBox DurationComboBoxOnAction;
+    @javafx.fxml.FXML
+    private Button SubmitButtonOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 

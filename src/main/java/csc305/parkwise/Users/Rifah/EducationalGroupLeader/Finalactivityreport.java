@@ -3,10 +3,25 @@ package csc305.parkwise.Users.Rifah.EducationalGroupLeader;
 public class Finalactivityreport
 {
     @javafx.fxml.FXML
+    private TextArea KeyAchievementTextAreaOnAction;
+    @javafx.fxml.FXML
+    private TextField UserIDTextFieldOnAction;
+    @javafx.fxml.FXML
+    private TextArea GroupActivitiesTextAreaOnAction;
+    @javafx.fxml.FXML
+    private TextArea ParticipationDetailsTextareaOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private Button SubmitButtonOnAction;
+    @javafx.fxml.FXML
+    private TextField FeedbackTextfieldOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void KeyAchievementTextAreaOnAction(Event event) {
     }
 
@@ -14,7 +29,7 @@ public class Finalactivityreport
     public void UserIdTextfieldOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void GroupActivitiesTextAreaOnAction(Event event) {
     }
 
@@ -22,7 +37,7 @@ public class Finalactivityreport
     public void BackButtonOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void ParticipationDetailsTextareaOnAction(Event event) {
     }
 

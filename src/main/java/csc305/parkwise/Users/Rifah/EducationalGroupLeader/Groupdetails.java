@@ -5,6 +5,21 @@ import javafx.event.ActionEvent;
 public class Groupdetails
 {
     @javafx.fxml.FXML
+    private DatePicker TimeDatePickerOnAction;
+    @javafx.fxml.FXML
+    private TextField GroupNameTextfeildOnaction;
+    @javafx.fxml.FXML
+    private TextField ParticipantsNumberTextFieldOnAction;
+    @javafx.fxml.FXML
+    private TextField EmailAddressTextFieldOnAction;
+    @javafx.fxml.FXML
+    private Button DoneButtonOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private DatePicker DateDatepickerOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 

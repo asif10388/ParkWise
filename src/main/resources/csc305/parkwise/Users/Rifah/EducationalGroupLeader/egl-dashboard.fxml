@@ -1,14 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.EGLDashboardController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.EGLDashboardController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="184.0" style="-fx-background-color: DarkGreen;">
+         <children>
+            <Label prefHeight="18.0" prefWidth="166.0" text="Educational Group Leader" textFill="#f8f5f5">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="DietaryRequirement" onMouseClicked="#DietaryRequirementOnMouseClick" prefHeight="18.0" prefWidth="166.0" text="Dietary Requirement" textFill="#fdfafa">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label onMouseClicked="#EducationalProgrammeOnMouseClick" prefHeight="18.0" prefWidth="166.0" text="Educational Programme" textFill="#f2ecec">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="EducationalProgramme" prefHeight="18.0" prefWidth="166.0" text="Final Activity Report" textFill="#efe9e9">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="GroupDetails" onMouseClicked="#GroupDetailsOnMouse" prefHeight="18.0" prefWidth="166.0" text="Group Details" textFill="#ebe2e2">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="GroupFeedBack" onMouseClicked="#GroupFeedbackOnMouseClick" prefHeight="18.0" prefWidth="166.0" text="Group Feedback" textFill="#f4ecec">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="GuidedTourRequest" onMouseClicked="#GuidedTourRequestOnMouseClick" prefHeight="18.0" prefWidth="166.0" text="Guided Tour Request" textFill="#f4efef">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="ItineraryPlanner" onMouseClicked="#ItineraryPlannerOnMouseClick" prefHeight="18.0" prefWidth="166.0" text="Itinerary Planner" textFill="#f4eeee">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="RecordingGroupParticipants" onMouseClicked="#RecordingGroupParticipantsOnMouseClick" prefHeight="18.0" prefWidth="166.0" text="Recording Group Participation" textFill="#f2ecec">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="184.0" prefHeight="55.0" prefWidth="416.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Label fx:id="UserId" onMouseClicked="#UserIdOnMouseClick" prefHeight="17.0" prefWidth="66.0" text="User ID" textFill="#f6f4f4" />
+            <Label fx:id="UserRoll" onMouseClicked="#UserRollOnMouseClick" prefHeight="17.0" prefWidth="83.0" text="User Roll" textFill="#f8f1f1" />
+            <Button fx:id="LogOutButtonOnAction" mnemonicParsing="false" onAction="#LogOutButtonOnAction" text="Log Out" />
+         </children>
+      </HBox>
+      <HBox layoutX="197.0" layoutY="90.0" prefHeight="107.0" prefWidth="394.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="107.0" prefWidth="118.0" style="-fx-background-color: #FFFFFf;">
+               <children>
+                  <Label fx:id="NameValue1" onMouseClicked="#Namevalue1OnMouseClick" text="Name Value 1" />
+               </children>
+            </VBox>
+            <VBox fx:id="MatricNameValue" alignment="CENTER" onMouseClicked="#MatricNamevalueOnMouseClick" prefHeight="107.0" prefWidth="123.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label fx:id="NameValue" onMouseClicked="#NameValue2OnMouseClick" text="name Value 2" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="107.0" prefWidth="147.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label fx:id="NameValue3" onMouseClicked="#NameValue3OnMouseClick" text="Name Value 3" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <TableView fx:id="TableViewInput" layoutX="231.0" layoutY="221.0" prefHeight="135.0" prefWidth="223.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+            <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

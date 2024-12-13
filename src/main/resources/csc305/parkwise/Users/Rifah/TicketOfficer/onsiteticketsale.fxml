@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.TicketOfficer.Onsiteticketsale">
    <children>
       <VBox alignment="CENTER" layoutX="64.0" layoutY="-3.0" prefHeight="68.0" prefWidth="537.0" style="-fx-background-color: Darkgreen;">
@@ -24,19 +23,19 @@
       </VBox>
       <VBox prefHeight="402.0" prefWidth="67.0" style="-fx-background-color: Darkgreen;">
          <children>
-            <Button mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="7.0" prefWidth="54.0" text="Back" />
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="7.0" prefWidth="54.0" text="Back" />
          </children>
       </VBox>
-      <ComboBox layoutX="183.0" layoutY="84.0" onAction="#TypesofTicketcomboBoxOnAction" prefWidth="150.0" />
+      <ComboBox fx:id="TypeofTicketComboBoxOnAction" layoutX="183.0" layoutY="84.0" onAction="#TypesofTicketComboBoxOnAction" prefWidth="150.0" />
       <Label layoutX="87.0" layoutY="88.0" text="Types of Ticket" />
-      <TextField layoutX="184.0" layoutY="123.0" onAction="#NumberofTicketTextFieldOnAction" />
+      <TextField fx:id="NumberofTicketTextFieldOnAction" layoutX="184.0" layoutY="123.0" onAction="#NumberofTicketTextFieldOnAction" />
       <Label layoutX="80.0" layoutY="127.0" text="Number of Ticket" />
-      <RadioButton layoutX="439.0" layoutY="205.0" mnemonicParsing="false" onAction="#CashRadioButtonOnAction" text="Cash" />
-      <RadioButton layoutX="439.0" layoutY="231.0" mnemonicParsing="false" onAction="#CreditCardRadioButtonOnAction" text="Credit Card" />
+      <RadioButton fx:id="CashRadioButtonOnAction" layoutX="439.0" layoutY="205.0" mnemonicParsing="false" onAction="#CashRadioButtonOnAction" text="Cash" />
+      <RadioButton fx:id="CreditCardRadioButtonOnAction" layoutX="439.0" layoutY="231.0" mnemonicParsing="false" onAction="#CreditCardRadioButtonOnAction" text="Credit Card" />
       <Label layoutX="434.0" layoutY="170.0" text="Payment Method" />
-      <Button layoutX="448.0" layoutY="331.0" mnemonicParsing="false" onAction="#ProcessPaymentButtonOnAction" text="Process Payment" />
-      <CheckBox layoutX="136.0" layoutY="205.0" mnemonicParsing="false" onAction="#DiscountsCheckBoxOnAction" text="Discounts" />
-      <CheckBox layoutX="136.0" layoutY="231.0" mnemonicParsing="false" onAction="#SpecialOfferCheckBoxOnAction" text="Special Offer" />
+      <Button fx:id="ProcessPaymentButtonOnAction" layoutX="448.0" layoutY="331.0" mnemonicParsing="false" onAction="#ProcessPaymentButtonOnAction" text="Process Payment" />
+      <CheckBox fx:id="DiscountCheckBoxOnAction" layoutX="136.0" layoutY="205.0" mnemonicParsing="false" onAction="#DiscountsCheckBoxOnAction" text="Discounts" />
+      <CheckBox fx:id="SpecialOfferCheckBoxOnAction" layoutX="136.0" layoutY="231.0" mnemonicParsing="false" onAction="#SpecialOfferCheckBoxOnAction" text="Special Offer" />
       <Label layoutX="122.0" layoutY="170.0" text="Requirements" />
    </children>
 </AnchorPane>

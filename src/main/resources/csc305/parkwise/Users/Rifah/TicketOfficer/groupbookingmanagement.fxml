@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.TicketOfficer.Groupbookingmanagement">
    <children>
       <VBox alignment="CENTER" layoutX="60.0" prefHeight="68.0" prefWidth="540.0" style="-fx-background-color: Darkgreen;">
@@ -24,23 +23,23 @@
       </VBox>
       <VBox layoutY="-2.0" prefHeight="407.0" prefWidth="63.0" style="-fx-background-color: Darkgreen;">
          <children>
-            <Button mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" />
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" />
          </children>
       </VBox>
-      <TextField layoutX="168.0" layoutY="92.0" onAction="#GroupNameTextFieldOnAction" />
-      <TextField layoutX="185.0" layoutY="132.0" onAction="#OrganizersContactTextFieldOnAction" />
-      <TextField layoutX="205.0" layoutY="177.0" onAction="#NumberofParticipantsTextFieldOnaction" />
+      <TextField fx:id="GroupNameTextFeildOnAction" layoutX="168.0" layoutY="92.0" onAction="#GroupNameTextFieldOnAction" />
+      <TextField fx:id="OrganizersContactTextFeildOnAction" layoutX="185.0" layoutY="132.0" onAction="#OrganizersContactTextFieldOnAction" />
+      <TextField fx:id="NumberofParticipantsTextFieldOnAction" layoutX="205.0" layoutY="177.0" onAction="#NumberofParticipantsTextFieldOnaction" />
       <Label layoutX="94.0" layoutY="96.0" text="Group Name" />
       <Label layoutX="76.0" layoutY="136.0" text="Organizer's Contact" />
       <Label layoutX="76.0" layoutY="181.0" text="Number of Participants" />
-      <CheckBox layoutX="105.0" layoutY="265.0" mnemonicParsing="false" onAction="#PicnicAreaCheckBoxOnAction" text="Picnic Area" />
-      <CheckBox layoutX="106.0" layoutY="292.0" mnemonicParsing="false" onAction="#CampsiteReservationCheckBoxOnAction" text="Campsite Reservation" />
+      <CheckBox fx:id="PicnicAreaCheckBoxOnAction" layoutX="105.0" layoutY="265.0" mnemonicParsing="false" onAction="#PicnicAreaCheckBoxOnAction" text="Picnic Area" />
+      <CheckBox fx:id="CampsiteReservationCheckBoxOnAction" layoutX="106.0" layoutY="292.0" mnemonicParsing="false" onAction="#CampsiteReservationCheckBoxOnAction" text="Campsite Reservation" />
       <Label layoutX="87.0" layoutY="231.0" text="Special Request" />
-      <ComboBox layoutX="464.0" layoutY="92.0" onAction="#GroupPackageComboBoxOnAction" prefHeight="25.0" prefWidth="123.0" />
+      <ComboBox fx:id="GroupPackageComboBoxOnAction" layoutX="464.0" layoutY="92.0" onAction="#GroupPackageComboBoxOnAction" prefHeight="25.0" prefWidth="123.0" />
       <Label layoutX="362.0" layoutY="96.0" text="Group Package" />
-      <Button layoutX="420.0" layoutY="345.0" mnemonicParsing="false" onAction="#ConfirmBookingButtonOnAction" text="Confirm Booking" />
-      <RadioButton layoutX="457.0" layoutY="265.0" mnemonicParsing="false" onAction="#CashRadioButtonOnAction" text="Cash" />
-      <RadioButton layoutX="457.0" layoutY="292.0" mnemonicParsing="false" onAction="#CreditCardRadioButtonOnAction" text="Credit Card" />
+      <Button fx:id="ConfirmBookingButtonOnAction" layoutX="420.0" layoutY="345.0" mnemonicParsing="false" onAction="#ConfirmBookingButtonOnAction" text="Confirm Booking" />
+      <RadioButton fx:id="CashRadioButtonOnAction" layoutX="457.0" layoutY="265.0" mnemonicParsing="false" onAction="#CashRadioButtonOnAction" text="Cash" />
+      <RadioButton fx:id="CreditCardRadioButtonOnAction" layoutX="457.0" layoutY="292.0" mnemonicParsing="false" onAction="#CreditCardRadioButtonOnAction" text="Credit Card" />
       <Label layoutX="443.0" layoutY="231.0" text="Payment Method" />
    </children>
 </AnchorPane>

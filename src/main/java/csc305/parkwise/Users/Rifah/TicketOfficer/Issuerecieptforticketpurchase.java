@@ -5,10 +5,31 @@ import javafx.event.ActionEvent;
 public class Issuerecieptforticketpurchase
 {
     @javafx.fxml.FXML
+    private TextField VisitorsFullnameTextFieldOnAction;
+    @javafx.fxml.FXML
+    private TextField PaymentMethodTextFieldOnAction;
+    @javafx.fxml.FXML
+    private RadioButton OnlineCopyRadioButtonOnAction;
+    @javafx.fxml.FXML
+    private TextField DateofPurchaseTextFieldOnAction;
+    @javafx.fxml.FXML
+    private TextField TicketNOTextFieldOnAction;
+    @javafx.fxml.FXML
+    private TextField EmailAddressTextFieldOnAction;
+    @javafx.fxml.FXML
+    private Button GenerateRecieptButtonOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private TextField TotalAmountPaidTextFieldOnAction;
+    @javafx.fxml.FXML
+    private RadioButton PhysicalCopyRadioButtonOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void GenerateRecieptOnAction(ActionEvent actionEvent) {
     }
 
@@ -28,7 +49,7 @@ public class Issuerecieptforticketpurchase
     public void DateofPurchaseTextFieldOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void BAckButtonOnAction(ActionEvent actionEvent) {
     }
 
@@ -46,5 +67,13 @@ public class Issuerecieptforticketpurchase
 
     @javafx.fxml.FXML
     public void TotalAmountPaidTextFieldOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void GenerateRecieptButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void BackButtonOnAction(ActionEvent actionEvent) {
     }
 }

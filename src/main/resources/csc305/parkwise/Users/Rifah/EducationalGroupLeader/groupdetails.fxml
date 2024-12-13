@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.Groupdetails">
    <children>
       <AnchorPane layoutX="8.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="602.0">
@@ -22,17 +21,17 @@
                   </Label>
                </children>
             </VBox>
-            <VBox layoutY="-1.0" prefHeight="401.0" prefWidth="60.0" style="-fx-background-color: darkgreen;" />
+            <VBox layoutX="-8.0" layoutY="-1.0" prefHeight="417.0" prefWidth="68.0" style="-fx-background-color: darkgreen;" />
             <Label layoutX="94.0" layoutY="118.0" prefHeight="17.0" prefWidth="79.0" text="Group Name" />
             <Label layoutX="69.0" layoutY="150.0" prefHeight="27.0" prefWidth="122.0" text="Participants Number" />
             <Label layoutX="94.0" layoutY="187.0" prefHeight="25.0" prefWidth="79.0" text="Email Address" />
-            <TextField layoutX="186.0" layoutY="114.0" onAction="#GroupNameTextfeildOnaction" prefHeight="25.0" prefWidth="128.0" />
-            <TextField layoutX="186.0" layoutY="151.0" onAction="#ParticipantsNumberTextFieldOnAction" prefHeight="25.0" prefWidth="128.0" />
-            <TextField layoutX="187.0" layoutY="188.0" onAction="#EmailAddressTextFieldOnAction" prefHeight="25.0" prefWidth="128.0" />
-            <DatePicker layoutX="404.0" layoutY="114.0" onAction="#DateDatepickerOnAction" />
-            <DatePicker layoutX="404.0" layoutY="151.0" onAction="#TimeDatePickerOnAction" />
-            <Button layoutX="451.0" layoutY="315.0" mnemonicParsing="false" onAction="#DoneButtonOnAction" prefHeight="25.0" prefWidth="60.0" text="Done" />
-            <Button layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="25.0" prefWidth="60.0" text="Back" />
+            <TextField fx:id="GroupNameTextfeildOnaction" layoutX="186.0" layoutY="114.0" onAction="#GroupNameTextfeildOnaction" prefHeight="25.0" prefWidth="128.0" />
+            <TextField fx:id="ParticipantsNumberTextFieldOnAction" layoutX="186.0" layoutY="151.0" onAction="#ParticipantsNumberTextFieldOnAction" prefHeight="25.0" prefWidth="128.0" />
+            <TextField fx:id="EmailAddressTextFieldOnAction" layoutX="187.0" layoutY="188.0" onAction="#EmailAddressTextFieldOnAction" prefHeight="25.0" prefWidth="128.0" />
+            <DatePicker fx:id="DateDatepickerOnAction" layoutX="404.0" layoutY="114.0" onAction="#DateDatepickerOnAction" />
+            <DatePicker fx:id="TimeDatePickerOnAction" layoutX="404.0" layoutY="151.0" onAction="#TimeDatePickerOnAction" />
+            <Button fx:id="DoneButtonOnAction" layoutX="451.0" layoutY="315.0" mnemonicParsing="false" onAction="#DoneButtonOnAction" prefHeight="25.0" prefWidth="60.0" text="Done" />
+            <Button fx:id="BackButtonOnAction" layoutX="147.0" layoutY="315.0" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="25.0" prefWidth="60.0" text="Back" />
             <Label layoutX="358.0" layoutY="118.0" text="Date" />
             <Label layoutX="358.0" layoutY="155.0" text="Time" />
          </children>

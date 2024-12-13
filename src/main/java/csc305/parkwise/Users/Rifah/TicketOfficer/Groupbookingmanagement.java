@@ -5,6 +5,27 @@ import javafx.event.ActionEvent;
 public class Groupbookingmanagement
 {
     @javafx.fxml.FXML
+    private CheckBox PicnicAreaCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private RadioButton CreditCardRadioButtonOnAction;
+    @javafx.fxml.FXML
+    private ComboBox GroupPackageComboBoxOnAction;
+    @javafx.fxml.FXML
+    private TextField GroupNameTextFeildOnAction;
+    @javafx.fxml.FXML
+    private RadioButton CashRadioButtonOnAction;
+    @javafx.fxml.FXML
+    private Button ConfirmBookingButtonOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private TextField OrganizersContactTextFeildOnAction;
+    @javafx.fxml.FXML
+    private TextField NumberofParticipantsTextFieldOnAction;
+    @javafx.fxml.FXML
+    private CheckBox CampsiteReservationCheckBoxOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 

@@ -5,6 +5,25 @@ import javafx.event.ActionEvent;
 public class Dailysalesreportgeneration
 {
     @javafx.fxml.FXML
+    private DatePicker StartDateDatePickerOnAction;
+    @javafx.fxml.FXML
+    private CheckBox DiscountCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private CheckBox RefundCancellationCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private Button ExportPDFButtonOnAction;
+    @javafx.fxml.FXML
+    private CheckBox OnlineSaleCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private CheckBox OnSiteCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private Button GenerateReportButtonOnAction;
+    @javafx.fxml.FXML
+    private DatePicker EndDateDatePickerOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 

@@ -5,6 +5,23 @@ import javafx.event.ActionEvent;
 public class Onsiteticketsale
 {
     @javafx.fxml.FXML
+    private RadioButton CreditCardRadioButtonOnAction;
+    @javafx.fxml.FXML
+    private CheckBox DiscountCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private TextField NumberofTicketTextFieldOnAction;
+    @javafx.fxml.FXML
+    private Button ProcessPaymentButtonOnAction;
+    @javafx.fxml.FXML
+    private ComboBox TypeofTicketComboBoxOnAction;
+    @javafx.fxml.FXML
+    private RadioButton CashRadioButtonOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private CheckBox SpecialOfferCheckBoxOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 
@@ -28,7 +45,7 @@ public class Onsiteticketsale
     public void CashRadioButtonOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void TypesofTicketcomboBoxOnAction(ActionEvent actionEvent) {
     }
 
@@ -38,5 +55,9 @@ public class Onsiteticketsale
 
     @javafx.fxml.FXML
     public void SpecialOfferCheckBoxOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void TypesofTicketComboBoxOnAction(ActionEvent actionEvent) {
     }
 }

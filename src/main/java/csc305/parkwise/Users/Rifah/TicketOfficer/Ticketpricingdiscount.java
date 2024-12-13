@@ -5,6 +5,31 @@ import javafx.event.ActionEvent;
 public class Ticketpricingdiscount
 {
     @javafx.fxml.FXML
+    private TextField RestrictionTextFieldOnAction;
+    @javafx.fxml.FXML
+    private RadioButton FixedRadioButtonOnAction;
+    @javafx.fxml.FXML
+    private RadioButton Parcentage2RadioButtonOnAction;
+    @javafx.fxml.FXML
+    private DatePicker TicketFrameDatePickerOnAction;
+    @javafx.fxml.FXML
+    private RadioButton Parcentage1RadioButtonOnAction;
+    @javafx.fxml.FXML
+    private ComboBox TicketTypeComboBoxOnAction;
+    @javafx.fxml.FXML
+    private TextField UsernameTextFieldOnAction;
+    @javafx.fxml.FXML
+    private TextField PasswordTextFieldOnAction;
+    @javafx.fxml.FXML
+    private Button LoginButtonOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+    @javafx.fxml.FXML
+    private CheckBox OnSiteCheckBoxOnAction;
+    @javafx.fxml.FXML
+    private CheckBox OnlineCheckBoxOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 

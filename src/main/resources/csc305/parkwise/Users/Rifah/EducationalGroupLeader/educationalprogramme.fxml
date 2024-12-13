@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.Educationalprogramme">
    <children>
       <VBox alignment="CENTER" layoutX="66.0" prefHeight="72.0" prefWidth="536.0" style="-fx-background-color: Darkgreen;">
@@ -22,16 +21,16 @@
       </VBox>
       <VBox prefHeight="402.0" prefWidth="69.0" style="-fx-background-color: darkgreen;">
          <children>
-            <Button mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="30.0" prefWidth="52.0" text="Back" />
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="30.0" prefWidth="52.0" text="Back" />
          </children>
       </VBox>
-      <ComboBox layoutX="259.0" layoutY="103.0" onAction="#ProgrammetopicComboBoxOnAction" prefWidth="150.0" />
-      <ComboBox layoutX="259.0" layoutY="141.0" onAction="#DurationComboBoxOnAction" prefWidth="150.0" />
+      <ComboBox fx:id="ProgrammeTopicComboBoxOnAction" layoutX="259.0" layoutY="103.0" onAction="#ProgrammetopicComboBoxOnAction" prefWidth="150.0" />
+      <ComboBox fx:id="DurationComboBoxOnAction" layoutX="259.0" layoutY="141.0" onAction="#DurationComboBoxOnAction" prefWidth="150.0" />
       <Label layoutX="136.0" layoutY="107.0" prefHeight="17.0" prefWidth="101.0" text="Programme Topic" />
       <Label layoutX="175.0" layoutY="145.0" text="Duration" />
-      <Button layoutX="142.0" layoutY="294.0" mnemonicParsing="false" onAction="#SelectProgrammeButtonOnAction" text="Select Programme" />
-      <DatePicker layoutX="259.0" layoutY="179.0" onAction="#SessionDateDatePickerOnAction" prefHeight="25.0" prefWidth="150.0" />
+      <Button fx:id="SelectProgrammeButtonOnAction" layoutX="142.0" layoutY="294.0" mnemonicParsing="false" onAction="#SelectProgrammeButtonOnAction" text="Select Programme" />
+      <DatePicker fx:id="SessionDateDatePickerOnAction" layoutX="259.0" layoutY="179.0" onAction="#SessionDateDatePickerOnAction" prefHeight="25.0" prefWidth="150.0" />
       <Label layoutX="163.0" layoutY="183.0" prefHeight="17.0" prefWidth="69.0" text="Session Date" />
-      <Button layoutX="461.0" layoutY="294.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="25.0" prefWidth="63.0" text="Submit" />
+      <Button fx:id="SubmitButtonOnAction" layoutX="461.0" layoutY="294.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="25.0" prefWidth="63.0" text="Submit" />
    </children>
 </AnchorPane>

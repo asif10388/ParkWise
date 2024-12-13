@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.TicketOfficer.Visitorcheckin">
    <children>
       <VBox alignment="CENTER" layoutX="62.0" prefHeight="65.0" prefWidth="538.0" style="-fx-background-color: Darkgreen;">
@@ -21,17 +20,17 @@
       </VBox>
       <VBox prefHeight="400.0" prefWidth="65.0" style="-fx-background-color: Darkgreen;">
          <children>
-            <Button mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" />
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" />
          </children>
       </VBox>
-      <TextField layoutX="233.0" layoutY="128.0" onAction="#BookingIdTextFieldOnAction" />
-      <TextField layoutX="233.0" layoutY="174.0" onAction="#TicketnNumberTextFieldOnAction" />
+      <TextField fx:id="BookingIDTextFieldOnAction" layoutX="233.0" layoutY="128.0" onAction="#BookingIdTextFieldOnAction" />
+      <TextField fx:id="TicketNumberTextFieldOnAction" layoutX="233.0" layoutY="174.0" onAction="#TicketnNumberTextFieldOnAction" />
       <Label layoutX="155.0" layoutY="132.0" text="Booking ID" />
       <Label layoutX="145.0" layoutY="178.0" text="Ticket Number" />
       <Label layoutX="154.0" layoutY="224.0" text="Ticket Type" />
-      <TextField layoutX="233.0" layoutY="220.0" onAction="#TicketTypeTextFieldOnAction" />
-      <TextField layoutX="233.0" layoutY="85.0" onAction="#NameTextFieldOnAction" />
+      <TextField fx:id="TicketTypeTextFieldOnAction" layoutX="233.0" layoutY="220.0" onAction="#TicketTypeTextFieldOnAction" />
+      <TextField fx:id="NameTextFieldOnAction" layoutX="233.0" layoutY="85.0" onAction="#NameTextFieldOnAction" />
       <Label layoutX="170.0" layoutY="89.0" text="Name" />
-      <Button layoutX="456.0" layoutY="325.0" mnemonicParsing="false" onAction="#CheckedInButtonOnAction" text="Checked In" />
+      <Button fx:id="CheckedInButtonOnAction" layoutX="456.0" layoutY="325.0" mnemonicParsing="false" onAction="#CheckedInButtonOnAction" text="Checked In" />
    </children>
 </AnchorPane>

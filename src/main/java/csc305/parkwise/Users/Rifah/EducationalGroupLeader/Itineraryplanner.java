@@ -3,6 +3,23 @@ package csc305.parkwise.Users.Rifah.EducationalGroupLeader;
 public class Itineraryplanner
 {
     @javafx.fxml.FXML
+    private DatePicker TimeSlotDatePickerOnAction;
+    @javafx.fxml.FXML
+    private ComboBox ActivitiesComboBoxOnAction;
+    @javafx.fxml.FXML
+    private Button SubmitItineraryButtonOnAction;
+    @javafx.fxml.FXML
+    private ComboBox ScheduleComboBoxOnAction;
+    @javafx.fxml.FXML
+    private DatePicker DateDatePickerOnAction;
+    @javafx.fxml.FXML
+    private ComboBox AgeRangeComboBoxOnAction;
+    @javafx.fxml.FXML
+    private ComboBox ThemesComboBoxOnAction;
+    @javafx.fxml.FXML
+    private Button BackButtonOnAction;
+
+    @javafx.fxml.FXML
     public void initialize() {
     }
 
