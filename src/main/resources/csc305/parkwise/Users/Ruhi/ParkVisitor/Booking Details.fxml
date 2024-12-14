@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Ruhi.ParkVisitor.BookingDetails">
+   <children>
+      <VBox layoutX="18.0" layoutY="4.0" prefHeight="390.0" prefWidth="565.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="565.0" text="Booking Details">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label prefHeight="41.0" prefWidth="112.0" text="Number of Group" />
+            <ChoiceBox prefHeight="32.0" prefWidth="150.0" />
+            <Label text="Number of Member" />
+            <ChoiceBox prefWidth="150.0" />
+            <Label text="Date and Time" />
+            <DatePicker onAction="#onDatebutton" promptText="Date" />
+            <DatePicker onAction="#onTimebutton" prefHeight="32.0" prefWidth="186.0" promptText="Time" />
+            <Label text="Select Payment Option" />
+            <RadioButton mnemonicParsing="false" onAction="#onClickbutton" text="Cash" />
+            <RadioButton mnemonicParsing="false" onAction="#onClickbutton" text="Card" />
+            <RadioButton mnemonicParsing="false" onAction="#onClickbutton" text="Online" />
+            <Label prefHeight="30.0" prefWidth="61.0" text="Total  Price" />
+            <TextField />
+            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="26.0" prefWidth="145.0" text="Confirm" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
