@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="475.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Arman.WildlifeBiologist.RecordandAnalyzeAnimalBehaviorController">
+   <children>
+      <HBox alignment="CENTER" layoutY="34.0" prefHeight="46.0" prefWidth="602.0" style="-fx-background-color: #285430;">
+         <children>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="343.0" text="Record and Analyze Animal Behavior" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ComboBox fx:id="AnimalSpeciesCombobox" layoutX="130.0" layoutY="97.0" onAction="#AnimalSpeciesComboboxOnAction" prefWidth="150.0" />
+      <TextField fx:id="EventTimeTextField" layoutX="119.0" layoutY="145.0" onAction="#EventTimeTextFieldOnAction" prefHeight="26.0" prefWidth="162.0">
+         <effect>
+            <Blend />
+         </effect>
+      </TextField>
+      <ComboBox fx:id="AnimalBehaviorComboBox" layoutX="420.0" layoutY="97.0" onAction="#AnimalBehaviorComboBoxOnAction" prefWidth="150.0" />
+      <TextField fx:id="AdditionalRecordTextField" layoutX="319.0" layoutY="166.0" onAction="#AdditionalRecordTextFiledOnAction" prefHeight="38.0" prefWidth="250.0">
+         <effect>
+            <Blend />
+         </effect>
+      </TextField>
+      <Button fx:id="SubmitButton" layoutX="506.0" layoutY="217.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" prefHeight="26.0" prefWidth="59.0" text="Submit">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="32.0" layoutY="101.0" text="Animal Species:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="149.0" text="Event Time:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="101.0" text="Animal Behavior:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="141.0" text="Additional Notes on Behavior:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="Back" layoutX="14.0" layoutY="6.0" onMouseClicked="#BackButtonOnMouseClick" prefHeight="28.0" prefWidth="24.0" text="↩">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="DateDatePicker" layoutX="98.0" layoutY="195.0" onAction="#DateDatePickerOnAction" prefHeight="26.0" prefWidth="180.0" />
+      <Label layoutX="32.0" layoutY="199.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="Tableview" layoutX="24.0" layoutY="254.0" prefHeight="206.0" prefWidth="554.0">
+        <columns>
+          <TableColumn fx:id="RecordID" prefWidth="75.0" text="Record ID" />
+          <TableColumn fx:id="AnimalSpecies" prefWidth="101.59998321533203" text="Animal Species" />
+            <TableColumn fx:id="ActionType" prefWidth="89.5999755859375" text="Action Type" />
+            <TableColumn fx:id="Location" prefWidth="89.5999755859375" text="Location" />
+            <TableColumn fx:id="EventTime" prefWidth="89.5999755859375" text="Event Time" />
+            <TableColumn fx:id="Additionalnotes" prefWidth="108.0000061035156" text="Additional notes" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
