@@ -1,5 +1,7 @@
 package csc305.parkwise.Users.Ruhi.ParkVisitor;
 
+import javafx.event.ActionEvent;
+
 public class BookingDetails
 {
     @javafx.fxml.FXML
