@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Ruhi.ParkVisitor.Feedback">
+   <children>
+      <VBox layoutX="46.0" layoutY="41.0" prefHeight="330.0" prefWidth="516.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="516.0" style="-fx-background-color: green;" text="Feedback" textFill="#fcf6f6">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <TextArea prefHeight="154.0" prefWidth="516.0" promptText="Please Give your feedback here...." />
+            <TabPane prefHeight="306.0" prefWidth="516.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Park Improvement Suggestion">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                <Tab text="Safety Concerns">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="140.0" prefWidth="515.0" style="-fx-background-color: green;" text="THANK  YOU" textFill="#f8f1f1">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

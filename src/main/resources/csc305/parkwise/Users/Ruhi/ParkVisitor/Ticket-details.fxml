@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="415.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Ruhi.ParkVisitor.TicketDetails">
+   <children>
+      <VBox prefHeight="417.0" prefWidth="107.0" style="-fx-background-color: green;">
+         <children>
+            <Label prefHeight="79.0" prefWidth="137.0" text="Park Visitor" textFill="#f8f0f0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label prefHeight="41.0" prefWidth="107.0" text="Ticket Details" textFill="#fcf8f8" />
+            <Label prefHeight="31.0" prefWidth="85.0" text="Booking Deatils" textFill="#fcfafa" />
+            <Label prefHeight="51.0" prefWidth="90.0" text="Donation Details" textFill="#f2eded" />
+            <Label prefHeight="45.0" prefWidth="107.0" text="Program/Workshop" textFill="#f8f3f3" />
+            <Label prefHeight="59.0" prefWidth="106.0" text="Feedback" textFill="#f2ebeb" />
+         </children>
+      </VBox>
+      <HBox layoutX="107.0" prefHeight="69.0" prefWidth="505.0" style="-fx-background-color: green;" />
+      <VBox layoutX="151.0" layoutY="77.0" prefHeight="324.0" prefWidth="420.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="493.0" text="Ticket Details">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <Label prefHeight="39.0" prefWidth="74.0" text="User Name">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField />
+            <Label prefHeight="32.0" prefWidth="125.0" text="Number of Ticket" />
+            <ChoiceBox prefWidth="150.0" />
+            <Label text="Ticket Options:" />
+            <MenuButton mnemonicParsing="false">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+              </items>
+            </MenuButton>
+            <Label text="Total Ticket Price" />
+            <TextField onAction="#onCalculateTotalPriceButton" />
+            <Label text="Select Payment Option" />
+            <RadioButton mnemonicParsing="false" onAction="#onClickbutton" text="Cash" />
+            <RadioButton mnemonicParsing="false" onAction="#onClickbutton" text="Card(Credit/Debit)" />
+            <RadioButton mnemonicParsing="false" onAction="#onClickbutton" text="Online" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
