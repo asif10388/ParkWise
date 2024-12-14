@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Ruhi.ParkRanger.PatrolReport">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="59.0" style="-fx-background-color: green;" />
+      <HBox layoutX="59.0" prefHeight="62.0" prefWidth="542.0" style="-fx-background-color: green;">
+         <children>
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="545.0" text="Patrol Report" textFill="#fcf9f9">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <TableView layoutX="59.0" layoutY="79.0" prefHeight="315.0" prefWidth="542.0">
+        <columns>
+          <TableColumn prefWidth="123.0" text="Supervisor Name" />
+          <TableColumn prefWidth="121.0" text="Trail Report" />
+            <TableColumn minWidth="3.0" prefWidth="150.0" text="Trail Condition" />
+            <TableColumn prefWidth="147.0" text="Trail History" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
