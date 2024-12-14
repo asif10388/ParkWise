@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.Groupfeedback">
+   <children>
+      <VBox alignment="CENTER" layoutX="70.0" prefHeight="73.0" prefWidth="531.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Label text="Group FeedBack" textFill="#f6f2f2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutY="-5.0" prefHeight="410.0" prefWidth="72.0" style="-fx-background-color: darkgreen;">
+         <children>
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="24.0" prefWidth="52.0" text="Back" />
+         </children>
+      </VBox>
+      <ComboBox fx:id="AvailableFeedbackFormsComboBoxOnaction" layoutX="233.0" layoutY="92.0" onAction="#AvailableFeedbackFormsComboBoxOnaction" prefWidth="150.0" />
+      <Label layoutX="83.0" layoutY="96.0" prefHeight="17.0" prefWidth="141.0" text="Available Feedback Forms" />
+      <Button fx:id="SelectFormButtonOnAction" layoutX="467.0" layoutY="92.0" mnemonicParsing="false" onAction="#SelectFormButtonOnAction" prefHeight="25.0" prefWidth="94.0" text=" Select Form" />
+      <CheckBox fx:id="Choice1CheckBoxOnAction" layoutX="487.0" layoutY="203.0" mnemonicParsing="false" onAction="#Choice1CheckBoxOnAction" text="Choice1" />
+      <CheckBox fx:id="Choice2CheckBoxOnAction" layoutX="487.0" layoutY="228.0" mnemonicParsing="false" onAction="#Choice2CheckBoxOnAction" text="Choice2" />
+      <CheckBox fx:id="Choice3CheckBoxOnAction" layoutX="487.0" layoutY="255.0" mnemonicParsing="false" onAction="#Choice3CheckBoxOnAction" text="Choice3" />
+      <CheckBox fx:id="Choice4CheckBoxOnAction" layoutX="487.0" layoutY="280.0" mnemonicParsing="false" onAction="#Choice4CheckBoxOnAction" text="Choice4" />
+      <Label layoutX="488.0" layoutY="159.0" text="Park Facilities" />
+      <TextArea fx:id="CommentsTextareaInput" layoutX="183.0" layoutY="164.0" prefHeight="46.0" prefWidth="200.0" />
+      <TextArea fx:id="SuggestionforImprovementTextAreaInput" layoutX="250.0" layoutY="232.0" prefHeight="46.0" prefWidth="200.0" />
+      <Label layoutX="100.0" layoutY="179.0" prefHeight="17.0" prefWidth="72.0" text="Comments" />
+      <Label layoutX="83.0" layoutY="245.0" prefHeight="17.0" prefWidth="160.0" text="Suggestions for Improvement" />
+      <Button fx:id="SubmitButtonOnAction" layoutX="120.0" layoutY="328.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" text="Submit" />
+   </children>
+</AnchorPane>

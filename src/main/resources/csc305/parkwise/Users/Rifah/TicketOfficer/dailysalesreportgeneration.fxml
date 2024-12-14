@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.TicketOfficer.Dailysalesreportgeneration">
+   <children>
+      <VBox alignment="CENTER" layoutX="71.0" prefHeight="68.0" prefWidth="530.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Label text="Daily Sales Report Generation" textFill="#f6eded">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="72.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" />
+         </children>
+      </VBox>
+      <DatePicker fx:id="StartDateDatePickerOnAction" layoutX="185.0" layoutY="81.0" onAction="#StartDateDatePickerOnAction" prefHeight="16.0" prefWidth="136.0" />
+      <DatePicker fx:id="EndDateDatePickerOnAction" layoutX="452.0" layoutY="81.0" onAction="#EndDateDatePickerOnAction" prefHeight="18.0" prefWidth="136.0" />
+      <Label layoutX="119.0" layoutY="85.0" text="Start Date" />
+      <Label layoutX="395.0" layoutY="85.0" text="End Date" />
+      <CheckBox fx:id="OnlineSaleCheckBoxOnAction" layoutX="138.0" layoutY="163.0" mnemonicParsing="false" onAction="#OnlineSaleCheckBoxOnAction" text="Online Sale" />
+      <CheckBox fx:id="OnSiteCheckBoxOnAction" layoutX="138.0" layoutY="191.0" mnemonicParsing="false" onAction="#OnSiteCheckBoxOnAction" text="On-Site" />
+      <CheckBox fx:id="DiscountCheckBoxOnAction" layoutX="138.0" layoutY="215.0" mnemonicParsing="false" onAction="#DiscountCheckBoxOnAction" text="Discounts" />
+      <CheckBox fx:id="RefundCancellationCheckBoxOnAction" layoutX="138.0" layoutY="243.0" mnemonicParsing="false" onAction="#RefundCancellationCheckBoxOnAction" text="Refund&amp;Cancellation" />
+      <Label layoutX="126.0" layoutY="132.0" text="Sales Catagories :" />
+      <Button fx:id="ExportPDFButtonOnAction" layoutX="112.0" layoutY="333.0" mnemonicParsing="false" onAction="#ExportPDFButtonOnAction" text="Export PDF" />
+      <Button fx:id="GenerateReportButtonOnAction" layoutX="462.0" layoutY="333.0" mnemonicParsing="false" onAction="#GenerateReportButtonOnAction" text="Generate Report" />
+   </children>
+</AnchorPane>

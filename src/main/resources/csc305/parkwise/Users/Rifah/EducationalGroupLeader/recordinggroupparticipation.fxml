@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.Recordinggroupparticipation">
+   <children>
+      <VBox alignment="CENTER" layoutX="60.0" prefHeight="73.0" prefWidth="541.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Label text="Recording Group's Participation" textFill="#f2efef">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="-8.0" prefHeight="400.0" prefWidth="71.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" prefHeight="25.0" prefWidth="68.0" text="Back" />
+         </children>
+      </VBox>
+      <ComboBox fx:id="PastEventsComboBoxOnAction" layoutX="244.0" layoutY="101.0" onAction="#PastEventsComboBoxOnAction" prefWidth="150.0" />
+      <DatePicker fx:id="DateDatePickerOnAction" layoutX="244.0" layoutY="175.0" onAction="#DateDatePickerOnAction" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="EventNameTextFieldOnAction" layoutX="244.0" layoutY="138.0" onAction="#EventNameTextFieldOnAction" />
+      <Label layoutX="147.0" layoutY="105.0" text="Past Events" />
+      <Label layoutX="147.0" layoutY="142.0" text="Event Name" />
+      <Label layoutX="164.0" layoutY="179.0" text="Date" />
+      <Label layoutX="105.0" layoutY="220.0" prefHeight="17.0" prefWidth="129.0" text="Number of Participants" />
+      <TextField fx:id="NumberofParticipantsTextFieldOnaction" layoutX="244.0" layoutY="216.0" onAction="#NumberofParticipantsTextFieldOnaction" />
+      <Button fx:id="SubmitButtonOnAction" layoutX="498.0" layoutY="327.0" mnemonicParsing="false" onAction="#SubmitButtonOnAction" text="Submit" />
+   </children>
+</AnchorPane>

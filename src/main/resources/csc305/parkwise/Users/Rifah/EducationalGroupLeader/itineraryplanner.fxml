@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="csc305.parkwise.Users.Rifah.EducationalGroupLeader.Itineraryplanner">
+   <children>
+      <Label layoutX="99.0" layoutY="111.0" prefHeight="17.0" prefWidth="75.0" text="Age Range :" />
+      <VBox alignment="CENTER" layoutX="67.0" layoutY="-4.0" prefHeight="83.0" prefWidth="533.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Label text="Itirerary Planner" textFill="#fdf8f8">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="-4.0" layoutY="-3.0" prefHeight="83.0" prefWidth="86.0" style="-fx-background-color: Darkgreen;">
+         <children>
+            <Button fx:id="BackButtonOnAction" mnemonicParsing="false" onAction="#BackButtonOnAction" text="Back" textFill="#190101">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ComboBox fx:id="AgeRangeComboBoxOnAction" layoutX="167.0" layoutY="107.0" onAction="#AgeRangeComboBoxOnAction" prefWidth="150.0" />
+      <ComboBox fx:id="ThemesComboBoxOnAction" layoutX="167.0" layoutY="143.0" onAction="#ThemesComboBoxOnAction" prefWidth="150.0" />
+      <ComboBox fx:id="ScheduleComboBoxOnAction" layoutX="167.0" layoutY="180.0" onAction="#ScheduleComboBoxOnAction" prefWidth="150.0" />
+      <Label layoutX="99.0" layoutY="147.0" prefHeight="17.0" prefWidth="59.0" text="Themes :" />
+      <Label layoutX="95.0" layoutY="184.0" prefHeight="17.0" prefWidth="67.0" text="Schedule :" />
+      <DatePicker fx:id="TimeSlotDatePickerOnAction" layoutX="409.0" layoutY="107.0" onAction="#TimeSlotDatePickerOnAction" />
+      <VBox alignment="CENTER" layoutY="79.0" prefHeight="323.0" prefWidth="86.0" style="-fx-background-color: Darkgreen;" />
+      <Label layoutX="347.0" layoutY="111.0" prefHeight="17.0" prefWidth="59.0" text="Time Slot :" />
+      <Button fx:id="SubmitItineraryButtonOnAction" layoutX="464.0" layoutY="339.0" mnemonicParsing="false" onAction="#SubmitItineraryButtonOnAction" prefHeight="25.0" prefWidth="113.0" text="Submit Itirerary" />
+      <ComboBox fx:id="ActivitiesComboBoxOnAction" layoutX="167.0" layoutY="215.0" onAction="#ActivitiesComboBoxOnAction" prefWidth="150.0" />
+      <Label layoutX="95.0" layoutY="219.0" prefHeight="17.0" prefWidth="67.0" text="Activities :" />
+      <DatePicker fx:id="DateDatePickerOnAction" layoutX="410.0" layoutY="152.0" onAction="#DateDatePickerOnAction" />
+      <Label layoutX="363.0" layoutY="156.0" text="Date" />
+   </children>
+</AnchorPane>
