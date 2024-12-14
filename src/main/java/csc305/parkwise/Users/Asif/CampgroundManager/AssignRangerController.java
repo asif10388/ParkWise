@@ -23,146 +23,152 @@ import java.util.Optional;
 
 import static csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation.getObjectOutputStream;
 
-public class AssignRangerController
-{
+public class AssignRangerController {
 
-    @javafx.fxml.FXML
-    private Label bookingStatusLabel;
-    @javafx.fxml.FXML
-    private Label bookerNameLabel;
-    @javafx.fxml.FXML
-    private ComboBox<Integer> selectCampsiteBookingCombobox;
-    @javafx.fxml.FXML
-    private Label bookingCampsiteLabel;
-    @javafx.fxml.FXML
-    private Label checkoutDateLabel;
-    @javafx.fxml.FXML
-    private Label durationOfStayLabel;
-    @javafx.fxml.FXML
-    private Label checkInDateLabel;
-    @javafx.fxml.FXML
-    private TableColumn<CampsiteBooking, Integer> campsiteBookingIdColumn;
-    @javafx.fxml.FXML
-    private TableView<CampsiteBooking> campsiteBookingTableview;
-    @javafx.fxml.FXML
-    private TableColumn<CampsiteBooking, Integer> campsiteBookingCampsiteIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn<CampsiteBooking, Integer> campsiteBookingUserIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn<CampsiteBooking, LocalDate> campsiteBookingCheckOutDateColumn;
-    @javafx.fxml.FXML
-    private ComboBox<Integer> selectRangerCombobox;
-    @javafx.fxml.FXML
-    private TableColumn<CampsiteBooking, Integer> campsiteBookingRangerIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn<CampsiteBooking, LocalDate> campsiteBookingCheckInDateColumn;
-    @javafx.fxml.FXML
-    private Button assignCamperToSiteButton;
+	@javafx.fxml.FXML
+	private Label bookingStatusLabel;
+	@javafx.fxml.FXML
+	private Label bookerNameLabel;
+	@javafx.fxml.FXML
+	private ComboBox<Integer> selectCampsiteBookingCombobox;
+	@javafx.fxml.FXML
+	private Label bookingCampsiteLabel;
+	@javafx.fxml.FXML
+	private Label checkoutDateLabel;
+	@javafx.fxml.FXML
+	private Label durationOfStayLabel;
+	@javafx.fxml.FXML
+	private Label checkInDateLabel;
+	@javafx.fxml.FXML
+	private TableColumn<CampsiteBooking, Integer> campsiteBookingIdColumn;
+	@javafx.fxml.FXML
+	private TableView<CampsiteBooking> campsiteBookingTableview;
+	@javafx.fxml.FXML
+	private TableColumn<CampsiteBooking, Integer> campsiteBookingCampsiteIdColumn;
+	@javafx.fxml.FXML
+	private TableColumn<CampsiteBooking, Integer> campsiteBookingUserIdColumn;
+	@javafx.fxml.FXML
+	private TableColumn<CampsiteBooking, LocalDate> campsiteBookingCheckOutDateColumn;
+	@javafx.fxml.FXML
+	private ComboBox<Integer> selectRangerCombobox;
+	@javafx.fxml.FXML
+	private TableColumn<CampsiteBooking, Integer> campsiteBookingRangerIdColumn;
+	@javafx.fxml.FXML
+	private TableColumn<CampsiteBooking, LocalDate> campsiteBookingCheckInDateColumn;
+	@javafx.fxml.FXML
+	private Button assignCamperToSiteButton;
 
-    public List<CampsiteBooking> getCampsiteBookingsFromFile() throws IOException {
-        StreamMapper stream = new StreamMapper();
-        List<Object> campsiteBookingObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.CampsiteBookingObjects)
-        );
+	public List<CampsiteBooking> getCampsiteBookingsFromFile() throws IOException {
+		StreamMapper stream = new StreamMapper();
+		List<Object> campsiteBookingObjects = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.CampsiteBookingObjects));
 
-        return campsiteBookingObjects.stream()
-                .filter(obj -> obj instanceof CampsiteBooking)
-                .map(obj -> (CampsiteBooking) obj)
-                .toList();
-    }
+		return campsiteBookingObjects.stream()
+				.filter(obj -> obj instanceof CampsiteBooking)
+				.map(obj -> (CampsiteBooking) obj)
+				.toList();
+	}
 
-    public List<StaffAccount> getStaffAccountsFromFile() throws IOException {
-        StreamMapper stream = new StreamMapper();
-        List<Object> staffAccounts = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.StaffObjects)
-        );
+	public List<StaffAccount> getStaffAccountsFromFile() throws IOException {
+		StreamMapper stream = new StreamMapper();
+		List<Object> staffAccounts = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.StaffObjects));
 
-        return staffAccounts.stream()
-                .filter(obj -> obj instanceof StaffAccount)
-                .map(obj -> (StaffAccount) obj)
-                .filter(staffAccount -> Objects.equals(staffAccount.getUserType(), "Park Ranger"))
-                .toList();
-    }
+		return staffAccounts.stream()
+				.filter(obj -> obj instanceof StaffAccount)
+				.map(obj -> (StaffAccount) obj)
+				.filter(staffAccount -> Objects.equals(staffAccount.getUserType(), "Park Ranger"))
+				.toList();
+	}
 
-    @javafx.fxml.FXML
-    public void initialize() throws IOException {
-        campsiteBookingIdColumn.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
-        campsiteBookingUserIdColumn.setCellValueFactory(new PropertyValueFactory<>("userId"));
-        campsiteBookingRangerIdColumn.setCellValueFactory(new PropertyValueFactory<>("parkRangerId"));
-        campsiteBookingCampsiteIdColumn.setCellValueFactory(new PropertyValueFactory<>("campsiteId"));
-        campsiteBookingCheckInDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkInDate"));
-        campsiteBookingCheckOutDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
+	public void loadCampsiteBookings() throws IOException {
+		List<CampsiteBooking> campsiteBookings = getCampsiteBookingsFromFile();
+		ObservableList<CampsiteBooking> campsiteBookingList = FXCollections.observableList(campsiteBookings);
+		campsiteBookingTableview.setItems(campsiteBookingList);
+	}
 
+	@javafx.fxml.FXML
+	public void initialize() throws IOException {
+		campsiteBookingIdColumn.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
+		campsiteBookingUserIdColumn.setCellValueFactory(new PropertyValueFactory<>("userId"));
+		campsiteBookingRangerIdColumn.setCellValueFactory(new PropertyValueFactory<>("parkRangerId"));
+		campsiteBookingCampsiteIdColumn.setCellValueFactory(new PropertyValueFactory<>("campsiteId"));
+		campsiteBookingCheckInDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkInDate"));
+		campsiteBookingCheckOutDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
 
-        List<CampsiteBooking> campsiteBookings =  getCampsiteBookingsFromFile();
-        campsiteBookings.forEach(campsiteBooking -> selectCampsiteBookingCombobox.getItems().add(campsiteBooking.getBookingId()));
+		List<CampsiteBooking> campsiteBookings = getCampsiteBookingsFromFile();
+		campsiteBookings.forEach(
+				campsiteBooking -> selectCampsiteBookingCombobox.getItems().add(campsiteBooking.getBookingId()));
 
-        ObservableList<CampsiteBooking> campsiteBookingList = FXCollections.observableList(campsiteBookings);
-        campsiteBookingTableview.setItems(campsiteBookingList);
+		loadCampsiteBookings();
 
-        selectRangerCombobox.setDisable(true);
-        assignCamperToSiteButton.setDisable(true);
+		selectRangerCombobox.setDisable(true);
+		assignCamperToSiteButton.setDisable(true);
 
-    }
+	}
 
-    @javafx.fxml.FXML
-    public void onAssignCamperToSiteButtonClick(ActionEvent actionEvent) throws IOException {
-        int parkRangerId = selectRangerCombobox.getValue();
-        int campsiteBookingId = selectCampsiteBookingCombobox.getValue();
+	@javafx.fxml.FXML
+	public void onAssignCamperToSiteButtonClick(ActionEvent actionEvent) throws IOException {
+		int parkRangerId = selectRangerCombobox.getValue();
+		int campsiteBookingId = selectCampsiteBookingCombobox.getValue();
 
-        List<CampsiteBooking> campsiteBookings = getCampsiteBookingsFromFile();
+		List<CampsiteBooking> campsiteBookings = getCampsiteBookingsFromFile();
 
-        Optional<CampsiteBooking> findCampsiteBooking = campsiteBookings.stream()
-                .filter(campsiteBooking -> campsiteBooking.getBookingId() == selectCampsiteBookingCombobox.getValue())
-                .findFirst();
+		Optional<CampsiteBooking> findCampsiteBooking = campsiteBookings.stream()
+				.filter(campsiteBooking -> campsiteBooking.getBookingId() == selectCampsiteBookingCombobox.getValue())
+				.findFirst();
 
-        if (findCampsiteBooking.isPresent()) {
-            findCampsiteBooking.get().setParkRangerId(parkRangerId);
+		if (findCampsiteBooking.isPresent()) {
+			findCampsiteBooking.get().setParkRangerId(parkRangerId);
 
-            try {
-                StreamMapper stream = new StreamMapper();
-                ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.CampsiteBookingObjects), true);
+			try {
+				StreamMapper stream = new StreamMapper();
+				ObjectOutputStream oos = getObjectOutputStream(
+						stream.getObjectStream(ObjectStreams.CampsiteBookingObjects), true);
 
-                for(CampsiteBooking campsiteBooking: campsiteBookings){
-                    oos.writeObject(campsiteBooking);
-                }
+				for (CampsiteBooking campsiteBooking : campsiteBookings) {
+					oos.writeObject(campsiteBooking);
+				}
 
-                oos.close();
+				oos.close();
 
-                Utilities.showAlert("Successfully assigned new ranger to campsite booking", Alert.AlertType.INFORMATION);
-            } catch (IOException e) {
-                Utilities.showAlert("Something went wrong! Please try again!", Alert.AlertType.ERROR);
-            }
-        }
-    }
+				Utilities.showAlert("Successfully assigned new ranger to campsite booking",
+						Alert.AlertType.INFORMATION);
 
-    @javafx.fxml.FXML
-    public void onCampsiteBookingSelected(ActionEvent actionEvent) throws IOException {
-        List<CampsiteBooking> campsiteBookings = getCampsiteBookingsFromFile();
+				loadCampsiteBookings();
+			} catch (IOException e) {
+				Utilities.showAlert("Something went wrong! Please try again!", Alert.AlertType.ERROR);
+			}
+		}
+	}
 
-        Optional<CampsiteBooking> findCampsite = campsiteBookings.stream()
-                .filter(campsiteBooking -> campsiteBooking.getBookingId() == selectCampsiteBookingCombobox.getValue())
-                .findFirst();
+	@javafx.fxml.FXML
+	public void onCampsiteBookingSelected(ActionEvent actionEvent) throws IOException {
+		List<CampsiteBooking> campsiteBookings = getCampsiteBookingsFromFile();
 
-        if (findCampsite.isPresent()) {
-            List<StaffAccount> staffAccounts = getStaffAccountsFromFile().stream()
-                            .filter(staffAccount -> staffAccount.getUserId() != findCampsite.get().getParkRangerId())
-                            .toList();
+		Optional<CampsiteBooking> findCampsite = campsiteBookings.stream()
+				.filter(campsiteBooking -> campsiteBooking.getBookingId() == selectCampsiteBookingCombobox.getValue())
+				.findFirst();
 
-            bookerNameLabel.setText(String.valueOf(findCampsite.get().getBookingId()));
-            checkInDateLabel.setText(String.valueOf(findCampsite.get().getCheckInDate()));
-            checkoutDateLabel.setText(String.valueOf(findCampsite.get().getCheckOutDate()));
-            bookingCampsiteLabel.setText(String.valueOf(findCampsite.get().getCampsiteId()));
-            bookingStatusLabel.setText(String.valueOf(findCampsite.get().getBookingStatus()));
-            durationOfStayLabel.setText(String.valueOf(findCampsite.get().getDurationInDays()));
+		if (findCampsite.isPresent()) {
+			List<StaffAccount> staffAccounts = getStaffAccountsFromFile().stream()
+					.filter(staffAccount -> staffAccount.getUserId() != findCampsite.get().getParkRangerId())
+					.toList();
 
-            selectRangerCombobox.setDisable(false);
-            staffAccounts.forEach(staffAccount -> selectRangerCombobox.getItems().add(staffAccount.getUserId()));
-        }
-    }
+			bookerNameLabel.setText(String.valueOf(findCampsite.get().getBookingId()));
+			checkInDateLabel.setText(String.valueOf(findCampsite.get().getCheckInDate()));
+			checkoutDateLabel.setText(String.valueOf(findCampsite.get().getCheckOutDate()));
+			bookingCampsiteLabel.setText(String.valueOf(findCampsite.get().getCampsiteId()));
+			bookingStatusLabel.setText(String.valueOf(findCampsite.get().getBookingStatus()));
+			durationOfStayLabel.setText(String.valueOf(findCampsite.get().getDurationInDays()));
 
-    @javafx.fxml.FXML
-    public void onRangerSelected(ActionEvent actionEvent) {
-        assignCamperToSiteButton.setDisable(false);
-    }
+			selectRangerCombobox.setDisable(false);
+			staffAccounts.forEach(staffAccount -> selectRangerCombobox.getItems().add(staffAccount.getUserId()));
+		}
+	}
+
+	@javafx.fxml.FXML
+	public void onRangerSelected(ActionEvent actionEvent) {
+		assignCamperToSiteButton.setDisable(false);
+	}
 }

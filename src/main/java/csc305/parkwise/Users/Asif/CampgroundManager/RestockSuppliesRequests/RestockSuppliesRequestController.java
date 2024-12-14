@@ -18,148 +18,152 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.Random;
 
-public class RestockSuppliesRequestController
-{
-    @javafx.fxml.FXML
-    private TextField restockQuantityTextInput;
-    @javafx.fxml.FXML
-    private ComboBox<String> restockPriorityLevelCombobox;
-    @javafx.fxml.FXML
-    private ComboBox<String> restockItemNameCombobox;
-    @javafx.fxml.FXML
-    private TextField requiredAmountTextInput;
-    @javafx.fxml.FXML
-    private TextArea reasonOfRequestTextarea;
+public class RestockSuppliesRequestController {
+	@javafx.fxml.FXML
+	private TextField restockQuantityTextInput;
+	@javafx.fxml.FXML
+	private ComboBox<String> restockPriorityLevelCombobox;
+	@javafx.fxml.FXML
+	private ComboBox<String> restockItemNameCombobox;
+	@javafx.fxml.FXML
+	private TextField requiredAmountTextInput;
+	@javafx.fxml.FXML
+	private TextArea reasonOfRequestTextarea;
 
-    private int userId;
-    @javafx.fxml.FXML
-    private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesItemIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesQuantityColumn;
-    @javafx.fxml.FXML
-    private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesRequiredAmountColumn;
-    @javafx.fxml.FXML
-    private TableView<RestockSuppliesRequest> restockSuppliesRequestsTableview;
-    @javafx.fxml.FXML
-    private TableColumn<RestockSuppliesRequest, LocalDate> restockSuppliesCreatedAtColumn;
-    @javafx.fxml.FXML
-    private TableColumn<RestockSuppliesRequest, String> restockSuppliesStatusColumn;
-    @javafx.fxml.FXML
-    private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesRequestIdColumn;
+	private int userId;
+	@javafx.fxml.FXML
+	private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesItemIdColumn;
+	@javafx.fxml.FXML
+	private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesQuantityColumn;
+	@javafx.fxml.FXML
+	private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesRequiredAmountColumn;
+	@javafx.fxml.FXML
+	private TableView<RestockSuppliesRequest> restockSuppliesRequestsTableview;
+	@javafx.fxml.FXML
+	private TableColumn<RestockSuppliesRequest, LocalDate> restockSuppliesCreatedAtColumn;
+	@javafx.fxml.FXML
+	private TableColumn<RestockSuppliesRequest, String> restockSuppliesStatusColumn;
+	@javafx.fxml.FXML
+	private TableColumn<RestockSuppliesRequest, Integer> restockSuppliesRequestIdColumn;
 
-    public int getUserId() {
-        return userId;
-    }
+	public int getUserId() {
+		return userId;
+	}
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
-    public List<Equipment> getEquipmentsFromFile() throws IOException {
-        StreamMapper stream = new StreamMapper();
-        List<Object> equipmentObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.EquipmentObjects)
-        );
+	public List<Equipment> getEquipmentsFromFile() throws IOException {
+		StreamMapper stream = new StreamMapper();
+		List<Object> equipmentObjects = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.EquipmentObjects));
 
-        return equipmentObjects.stream()
-                .filter(obj -> obj instanceof Equipment)
-                .map(obj -> (Equipment) obj)
-                .toList();
-    }
+		return equipmentObjects.stream()
+				.filter(obj -> obj instanceof Equipment)
+				.map(obj -> (Equipment) obj)
+				.toList();
+	}
 
-    public List<RestockSuppliesRequest> getRestockSuppliesRequestsFromFile() throws IOException {
-        StreamMapper stream = new StreamMapper();
-        List<Object> restockSuppliesRequestObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.RestockSuppliesRequestObjects)
-        );
+	public List<RestockSuppliesRequest> getRestockSuppliesRequestsFromFile() throws IOException {
+		StreamMapper stream = new StreamMapper();
+		List<Object> restockSuppliesRequestObjects = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.RestockSuppliesRequestObjects));
 
-        return restockSuppliesRequestObjects.stream()
-                .filter(obj -> obj instanceof RestockSuppliesRequest)
-                .map(obj -> (RestockSuppliesRequest) obj)
-                .toList();
-    }
+		return restockSuppliesRequestObjects.stream()
+				.filter(obj -> obj instanceof RestockSuppliesRequest)
+				.map(obj -> (RestockSuppliesRequest) obj)
+				.toList();
+	}
 
-    @javafx.fxml.FXML
-    public void initialize() throws IOException {
-        restockSuppliesItemIdColumn.setCellValueFactory(new PropertyValueFactory<>("itemId"));
-        restockSuppliesStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        restockSuppliesQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        restockSuppliesCreatedAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
-        restockSuppliesRequestIdColumn.setCellValueFactory(new PropertyValueFactory<>("requestId"));
-        restockSuppliesRequiredAmountColumn.setCellValueFactory(new PropertyValueFactory<>("requiredAmount"));
+	public void loadRestockSuppliesRequests() throws IOException {
+		List<RestockSuppliesRequest> restockSuppliesRequests = getRestockSuppliesRequestsFromFile();
 
-        List<Equipment> equipments =  getEquipmentsFromFile();
-        List<RestockSuppliesRequest> restockSuppliesRequests =  getRestockSuppliesRequestsFromFile();
+		ObservableList<RestockSuppliesRequest> restockSuppliesRequestList = FXCollections
+				.observableList(restockSuppliesRequests);
+		restockSuppliesRequestsTableview.setItems(restockSuppliesRequestList);
+	}
 
-        restockPriorityLevelCombobox.getItems().addAll("High", "Medium", "Low");
-        equipments.forEach(equipment -> restockItemNameCombobox.getItems().add(equipment.getItemName()));
+	@javafx.fxml.FXML
+	public void initialize() throws IOException {
+		restockSuppliesItemIdColumn.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+		restockSuppliesStatusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+		restockSuppliesQuantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+		restockSuppliesCreatedAtColumn.setCellValueFactory(new PropertyValueFactory<>("createdAt"));
+		restockSuppliesRequestIdColumn.setCellValueFactory(new PropertyValueFactory<>("requestId"));
+		restockSuppliesRequiredAmountColumn.setCellValueFactory(new PropertyValueFactory<>("requiredAmount"));
 
-        ObservableList<RestockSuppliesRequest> restockSuppliesRequestList = FXCollections.observableList(restockSuppliesRequests);
-        restockSuppliesRequestsTableview.setItems(restockSuppliesRequestList);
-    }
+		List<Equipment> equipments = getEquipmentsFromFile();
+		restockPriorityLevelCombobox.getItems().addAll("High", "Medium", "Low");
+		equipments.forEach(equipment -> restockItemNameCombobox.getItems().add(equipment.getItemName()));
 
-    @javafx.fxml.FXML
-    public void onSubmitRequestButtonClick(ActionEvent actionEvent) throws IOException {
-        if(restockItemNameCombobox.getValue() == null ||
-           restockQuantityTextInput.getText().isBlank() ||
-           restockPriorityLevelCombobox.getValue() == null ||
-           requiredAmountTextInput.getText().isBlank()
-        ) {
-            Utilities.showAlert("Please fill out all necessary fields", Alert.AlertType.ERROR);
-            return;
-        }
+		loadRestockSuppliesRequests();
+	}
 
-        if(Integer.parseInt(restockQuantityTextInput.getText()) <= 0) {
-            Utilities.showAlert("Please enter a quantity greater than 0", Alert.AlertType.ERROR);
-            return;
-        }
+	@javafx.fxml.FXML
+	public void onSubmitRequestButtonClick(ActionEvent actionEvent) throws IOException {
+		if (restockItemNameCombobox.getValue() == null ||
+				restockQuantityTextInput.getText().isBlank() ||
+				restockPriorityLevelCombobox.getValue() == null ||
+				requiredAmountTextInput.getText().isBlank()) {
+			Utilities.showAlert("Please fill out all necessary fields", Alert.AlertType.ERROR);
+			return;
+		}
 
-        if(Integer.parseInt(requiredAmountTextInput.getText()) <= 0) {
-            Utilities.showAlert("Amount must be greater than 0", Alert.AlertType.ERROR);
-            return;
-        }
+		if (Integer.parseInt(restockQuantityTextInput.getText()) <= 0) {
+			Utilities.showAlert("Please enter a quantity greater than 0", Alert.AlertType.ERROR);
+			return;
+		}
 
-        String itemName = restockItemNameCombobox.getValue();
-        String requestReason = reasonOfRequestTextarea.getText();
-        String priorityLevel = restockPriorityLevelCombobox.getValue();
-        int quantity = Integer.parseInt(restockQuantityTextInput.getText());
-        int requiredAmount = Integer.parseInt(requiredAmountTextInput.getText());
+		if (Integer.parseInt(requiredAmountTextInput.getText()) <= 0) {
+			Utilities.showAlert("Amount must be greater than 0", Alert.AlertType.ERROR);
+			return;
+		}
 
-        StreamMapper stream = new StreamMapper();
-        List<Object> equipmentObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.EquipmentObjects)
-        );
+		String itemName = restockItemNameCombobox.getValue();
+		String requestReason = reasonOfRequestTextarea.getText();
+		String priorityLevel = restockPriorityLevelCombobox.getValue();
+		int quantity = Integer.parseInt(restockQuantityTextInput.getText());
+		int requiredAmount = Integer.parseInt(requiredAmountTextInput.getText());
 
-        Optional<Equipment> findEquipment = equipmentObjects.stream()
-                .filter(obj -> obj instanceof Equipment)
-                .map(obj -> (Equipment) obj)
-                .filter(obj -> obj.getItemName().equals(itemName))
-                .findFirst();
+		StreamMapper stream = new StreamMapper();
+		List<Object> equipmentObjects = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.EquipmentObjects));
 
-        if(findEquipment.isPresent()){
-            Equipment equipment = findEquipment.get();
-            RestockSuppliesRequest restockSuppliesRequest = new RestockSuppliesRequest(
-                this.getUserId(),
-                equipment.getItemId(),
-                quantity,
-                1001,
-                "Pending",
-                    priorityLevel,
-                    "Restock",
-                    requiredAmount,
-                    LocalDate.now(),
-                    requestReason
-            );
+		Optional<Equipment> findEquipment = equipmentObjects.stream()
+				.filter(obj -> obj instanceof Equipment)
+				.map(obj -> (Equipment) obj)
+				.filter(obj -> obj.getItemName().equals(itemName))
+				.findFirst();
 
-            boolean submitRequest = restockSuppliesRequest.submitRestockSuppliesRequest();
+		if (findEquipment.isPresent()) {
+			Random random = new Random();
+			int requestId = random.nextInt(1000000);
 
-            if (submitRequest) {
-                Utilities.showAlert("Successfully submitted restock request!", Alert.AlertType.INFORMATION);
-            } else {
-                Utilities.showAlert("Something went wrong! Please try again!", Alert.AlertType.ERROR);
-            }
-        }
+			Equipment equipment = findEquipment.get();
+			RestockSuppliesRequest restockSuppliesRequest = new RestockSuppliesRequest(
+					this.getUserId(),
+					equipment.getItemId(),
+					quantity,
+					requestId,
+					"Pending",
+					priorityLevel,
+					"Restock",
+					requiredAmount,
+					LocalDate.now(),
+					requestReason);
 
-    }
+			boolean submitRequest = restockSuppliesRequest.submitRestockSuppliesRequest();
+
+			if (submitRequest) {
+				Utilities.showAlert("Successfully submitted restock request!", Alert.AlertType.INFORMATION);
+				loadRestockSuppliesRequests();
+			} else {
+				Utilities.showAlert("Something went wrong! Please try again!", Alert.AlertType.ERROR);
+			}
+		}
+
+	}
 }

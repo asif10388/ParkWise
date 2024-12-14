@@ -110,6 +110,16 @@ public class Equipment implements Serializable {
 		return this.itemCategory.equalsIgnoreCase(category);
 	}
 
+	public String determineStockStatus() {
+		if (itemsInStock == 0) {
+			return "Out of stock";
+		} else if (itemsInStock < 10) {
+			return "Low stock";
+		} else {
+			return "Available";
+		}
+	}
+
 	@Override
 	public String toString() {
 		return "Equipment{" +

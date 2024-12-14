@@ -91,8 +91,6 @@ public class CampsiteMaintenanceRequestsController {
 		campsiteMaintenanceIssueDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
 
 		List<Campsite> campsites = getCampsitesFromFile();
-		List<CampsiteMaintenanceRequest> campsiteMaintenanceRequests = getCampsiteMaintenanceRequestsFromFile();
-
 		maintenanceTypeCombobox.getItems().addAll("Repair", "Improvement");
 		selectPriorityCombobox.getItems().addAll("High", "Medium", "Low");
 		campsites.forEach(obj -> selectCampsiteCombobox.getItems().add(obj.getCampsiteName()));
