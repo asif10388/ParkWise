@@ -154,7 +154,7 @@ public class AssignRangerController
             checkoutDateLabel.setText(String.valueOf(findCampsite.get().getCheckOutDate()));
             bookingCampsiteLabel.setText(String.valueOf(findCampsite.get().getCampsiteId()));
             bookingStatusLabel.setText(String.valueOf(findCampsite.get().getBookingStatus()));
-            durationOfStayLabel.setText(String.valueOf(findCampsite.get().getCheckOutDate().compareTo(findCampsite.get().getCheckInDate())));
+            durationOfStayLabel.setText(String.valueOf(findCampsite.get().getDurationInDays()));
 
             selectRangerCombobox.setDisable(false);
             staffAccounts.forEach(staffAccount -> selectRangerCombobox.getItems().add(staffAccount.getUserId()));

@@ -33,8 +33,23 @@ public class StaffAccountsController
     private TableColumn<StaffAccount, String> staffRoleColumn;
     @javafx.fxml.FXML
     private TableColumn<StaffAccount, String> staffUserIdColumn;
-    @javafx.fxml.FXML
-    private Label showResultLabel;
+
+    public List<StaffAccount> loadStaffAccountsTable() throws IOException {
+        StreamMapper stream = new StreamMapper();
+        List<Object> staffObjects = ObjectStreamOperation.getObjectsFromFile(
+                stream.getObjectStream(ObjectStreams.StaffObjects)
+        );
+
+        List<StaffAccount> staffAccounts = staffObjects.stream()
+                .filter(obj -> obj instanceof StaffAccount)
+                .map(obj -> (StaffAccount) obj )
+                .toList();
+
+        ObservableList<StaffAccount> staffAccountsList = FXCollections.observableList(staffAccounts);
+        staffAccountsTableview.setItems(staffAccountsList);
+
+        return staffAccounts;
+    };
 
     @javafx.fxml.FXML
     public void initialize() throws IOException {
@@ -42,17 +57,7 @@ public class StaffAccountsController
         staffRoleColumn.setCellValueFactory(new PropertyValueFactory<>("userType"));
         staffFullnameColumn.setCellValueFactory(new PropertyValueFactory<>("fullName"));
 
-        List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                "src/main/java/csc305/parkwise/Common/Streams/StaffObjects.bin"
-        );
-
-        List<StaffAccount> staffAccounts = userObjects.stream()
-                        .filter(obj -> obj instanceof StaffAccount)
-                        .map(obj -> (StaffAccount) obj )
-                        .toList();
-
-        ObservableList<StaffAccount> staffAccountsList = FXCollections.observableList(staffAccounts);
-        staffAccountsTableview.setItems(staffAccountsList);
+        loadStaffAccountsTable();
 
         userTypeCombobox.getItems().addAll(
                 "Tour Guide",
@@ -71,28 +76,30 @@ public class StaffAccountsController
         String fullName = fullNameTextInput.getText();
         String userType = userTypeCombobox.getValue();
 
-        String outputStr = "";
-
         if(password.isEmpty() || email.isEmpty() || fullName.isEmpty() || userType.isEmpty()){
             Utilities.showAlert("No fields can be blank", Alert.AlertType.ERROR);
             return;
         }
 
-        if(password.length() < 8){
-            Utilities.showAlert("Password must be between 8 and 16 characters", Alert.AlertType.ERROR);
+        if(!StaffAccount.isValidStaffEmail(email)){
+            Utilities.showAlert("Email is not a valid staff email!", Alert.AlertType.ERROR);
             return;
         }
 
-        List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                "src/main/java/csc305/parkwise/Common/Streams/StaffObjects.bin"
-        );
+        if(!StaffAccount.isValidPassword(password)){
+            Utilities.showAlert("Password must be greater than 8 characters", Alert.AlertType.ERROR);
+            return;
+        }
 
-        StaffAccount getLastStaffAccount = userObjects.stream()
+        StreamMapper stream = new StreamMapper();
+        List<Object> staffObjects = ObjectStreamOperation.getObjectsFromFile(stream.getObjectStream(ObjectStreams.StaffObjects));
+
+        List<StaffAccount> staffAccounts = staffObjects.stream()
                 .filter(obj -> obj instanceof StaffAccount)
                 .map(obj -> (StaffAccount) obj)
-                .toList().getLast();
+                .toList();
 
-        int userId = getLastStaffAccount.getUserId() + 1;
+        int userId = StaffAccount.generateNewUserId(staffAccounts);
 
         StaffAccount newStaff = new StaffAccount(
                 userId,
@@ -102,15 +109,19 @@ public class StaffAccountsController
                 userType
         );
 
-        showResultLabel.setText(newStaff.toString());
-
         try {
-            StreamMapper stream = new StreamMapper();
             ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.StaffObjects), false);
             oos.writeObject(newStaff);
             oos.close();
+			
+			passwordInput.clear();
+			fullNameTextInput.clear();
+			emailAddressInput.clear();
+			userTypeCombobox.getSelectionModel().clearSelection();
 
-            Utilities.showAlert("Successfully added user", Alert.AlertType.INFORMATION);
+			loadStaffAccountsTable();
+
+			Utilities.showAlert("Staff account added successfully", Alert.AlertType.INFORMATION);
 
         } catch (Exception ignored) {
             Utilities.showAlert("Something went wrong. Please try again", Alert.AlertType.ERROR);
@@ -123,24 +134,7 @@ public class StaffAccountsController
     }
 
     @javafx.fxml.FXML
-    public void onShowResultButtonClick(ActionEvent actionEvent) throws IOException {
-        String outputStr = "";
-
-        List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                "src/main/java/csc305/parkwise/Common/Streams/UserObjects.bin"
-        );
-
-        List<StaffAccount> staffAccounts = userObjects.stream()
-                .filter(obj -> obj instanceof StaffAccount)
-                .map(obj -> (StaffAccount) obj )
-                .toList();
-
-        for (StaffAccount staffAccount : staffAccounts) {
-            outputStr += staffAccount.getUserId() + ",";
-        }
-
-        showResultLabel.setText(outputStr);
-        ObservableList<StaffAccount> staffAccountsList = FXCollections.observableList(staffAccounts);
-        staffAccountsTableview.setItems(staffAccountsList);
+    public void onLoadUsersButtonClick(ActionEvent actionEvent) throws IOException {
+        loadStaffAccountsTable();
     }
 }

@@ -1,6 +1,9 @@
 package csc305.parkwise.Users.Rifah.TicketOfficer;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 
 public class Issuerecieptforticketpurchase
 {

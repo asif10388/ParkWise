@@ -18,144 +18,173 @@ import java.util.List;
 import java.util.Optional;
 import static csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation.getObjectOutputStream;
 
-public class PerformanceReviewsController
-{
-    @javafx.fxml.FXML
-    private ComboBox<Integer> jobRatingCombobox;
-    @javafx.fxml.FXML
-    private TextArea feedbackTextArea;
-    @javafx.fxml.FXML
-    private ComboBox<Integer> teamworkRatingCombobox;
-    @javafx.fxml.FXML
-    private ComboBox<Integer> punctualityRatingCombobox;
-    @javafx.fxml.FXML
-    private ComboBox<Integer> staffIDCombobox;
-    @javafx.fxml.FXML
-    private ComboBox<Integer> wokrQualityCombobox;
-    @javafx.fxml.FXML
-    private Label staffRoleLabel;
-    @javafx.fxml.FXML
-    private TableView<PerformanceReview> performanceReivewsTableview;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, Integer> staffIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, String> staffNameColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, String> staffRoleColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, Integer> jobColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, Integer> teamworkColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, Integer> overallColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, Integer> workQualityColumn;
-    @javafx.fxml.FXML
-    private TableColumn<PerformanceReview, Integer> punctualityColumn;
+public class PerformanceReviewsController {
+	@javafx.fxml.FXML
+	private ComboBox<Integer> jobRatingCombobox;
+	@javafx.fxml.FXML
+	private TextArea feedbackTextArea;
+	@javafx.fxml.FXML
+	private ComboBox<Integer> teamworkRatingCombobox;
+	@javafx.fxml.FXML
+	private ComboBox<Integer> punctualityRatingCombobox;
+	@javafx.fxml.FXML
+	private ComboBox<Integer> staffIDCombobox;
+	@javafx.fxml.FXML
+	private ComboBox<Integer> wokrQualityCombobox;
+	@javafx.fxml.FXML
+	private Label staffRoleLabel;
+	@javafx.fxml.FXML
+	private TableView<PerformanceReview> performanceReivewsTableview;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, Integer> staffIdColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, String> staffNameColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, String> staffRoleColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, Integer> jobColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, Integer> teamworkColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, Integer> overallColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, Integer> workQualityColumn;
+	@javafx.fxml.FXML
+	private TableColumn<PerformanceReview, Integer> punctualityColumn;
 
-    private StaffAccount selectedStaffAccount;
-    private final List<StaffAccount> staffAccountsList = new ArrayList<>();
-    @javafx.fxml.FXML
-    private Label demoLabel;
+	private StaffAccount selectedStaffAccount;
+	private final List<StaffAccount> staffAccountsList = new ArrayList<>();
+	@javafx.fxml.FXML
+	private Label demoLabel;
 
-    @javafx.fxml.FXML
-    public void initialize() throws IOException {
-        jobColumn.setCellValueFactory(new PropertyValueFactory<>("jobRating"));
-        staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
-        staffNameColumn.setCellValueFactory(new PropertyValueFactory<>("staffName"));
-        staffRoleColumn.setCellValueFactory(new PropertyValueFactory<>("staffRole"));
-        overallColumn.setCellValueFactory(new PropertyValueFactory<>("overallRating"));
-        teamworkColumn.setCellValueFactory(new PropertyValueFactory<>("teamworkRating"));
-        workQualityColumn.setCellValueFactory(new PropertyValueFactory<>("workQualityRating"));
-        punctualityColumn.setCellValueFactory(new PropertyValueFactory<>("punctualityRating"));
+	public void loadPerformanceReviews() throws IOException {
+		StreamMapper stream = new StreamMapper();
+		List<Object> performanceReviewObjects = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.PerformanceReviewObjects));
 
-        StreamMapper stream = new StreamMapper();
-        List<Object> userObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.UserObjects)
-        );
+		List<PerformanceReview> performanceReviews = performanceReviewObjects.stream()
+				.filter(obj -> obj instanceof PerformanceReview)
+				.map(obj -> (PerformanceReview) obj)
+				.toList();
 
-        List<StaffAccount> staffAccounts = userObjects.stream()
-                .filter(obj -> obj instanceof StaffAccount)
-                .map(obj -> (StaffAccount) obj)
-                .filter(obj -> obj.getUserId() != 1001)
-                .toList();
+		ObservableList<PerformanceReview> performanceReviewsList = FXCollections.observableList(performanceReviews);
+		performanceReivewsTableview.setItems(performanceReviewsList);
+	}
 
-        staffAccountsList.addAll(staffAccounts);
+	@javafx.fxml.FXML
+	public void initialize() throws IOException {
+		jobColumn.setCellValueFactory(new PropertyValueFactory<>("jobRating"));
+		staffIdColumn.setCellValueFactory(new PropertyValueFactory<>("staffId"));
+		staffNameColumn.setCellValueFactory(new PropertyValueFactory<>("staffName"));
+		staffRoleColumn.setCellValueFactory(new PropertyValueFactory<>("staffRole"));
+		overallColumn.setCellValueFactory(new PropertyValueFactory<>("overallRating"));
+		teamworkColumn.setCellValueFactory(new PropertyValueFactory<>("teamworkRating"));
+		workQualityColumn.setCellValueFactory(new PropertyValueFactory<>("workQualityRating"));
+		punctualityColumn.setCellValueFactory(new PropertyValueFactory<>("punctualityRating"));
 
-        for(StaffAccount staffAccount : staffAccounts){
-            staffIDCombobox.getItems().add(staffAccount.getUserId());
-        }
+		StreamMapper stream = new StreamMapper();
+		List<Object> staffAccountObjects = ObjectStreamOperation.getObjectsFromFile(
+				stream.getObjectStream(ObjectStreams.StaffObjects));
 
-        jobRatingCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        wokrQualityCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        teamworkRatingCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        punctualityRatingCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		List<StaffAccount> staffAccounts = staffAccountObjects.stream()
+				.filter(obj -> obj instanceof StaffAccount)
+				.map(obj -> (StaffAccount) obj)
+				.filter(obj -> obj.getUserId() != 1001)
+				.toList();
 
-        List<Object> performanceReviewObjects = ObjectStreamOperation.getObjectsFromFile(
-                stream.getObjectStream(ObjectStreams.PerformanceReviewObjects)
-        );
+		staffAccountsList.addAll(staffAccounts);
 
-        List<PerformanceReview> performanceReviews = performanceReviewObjects.stream()
-                .filter(obj -> obj instanceof PerformanceReview)
-                .map(obj -> (PerformanceReview) obj)
-                .toList();
+		for (StaffAccount staffAccount : staffAccounts) {
+			staffIDCombobox.getItems().add(staffAccount.getUserId());
+		}
 
-        ObservableList<PerformanceReview> performanceReviewsList = FXCollections.observableList(performanceReviews);
-        performanceReivewsTableview.setItems(performanceReviewsList);
-    }
+		jobRatingCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		wokrQualityCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		teamworkRatingCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		punctualityRatingCombobox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-    @javafx.fxml.FXML
-    public void onReviewStaffButtonClick(ActionEvent actionEvent) throws IOException {
-        int staffId = staffIDCombobox.getValue();
-        String staffRole = staffRoleLabel.getText();
-        String feedback = feedbackTextArea.getText();
-        int jobRating = jobRatingCombobox.getValue();
-        int teamworkRating = teamworkRatingCombobox.getValue();
-        int workQualityRating = wokrQualityCombobox.getValue();
-        int punctualityRating = punctualityRatingCombobox.getValue();
+		loadPerformanceReviews();
+	}
 
-        String staffName = selectedStaffAccount.getFullName();
+	@javafx.fxml.FXML
+	public void onReviewStaffButtonClick(ActionEvent actionEvent) throws IOException {
+		if (staffIDCombobox.getValue() == null) {
+			Utilities.showAlert("Please select a staff ID!", Alert.AlertType.ERROR);
+			return;
+		}
 
-        PerformanceReview performanceReview = new PerformanceReview(
-                staffId,
-                staffName,
-                staffRole,
-                jobRating,
-                teamworkRating,
-                punctualityRating,
-                workQualityRating,
-                feedback
-        );
+		if (jobRatingCombobox.getValue() == null) {
+			Utilities.showAlert("Please select a job rating!", Alert.AlertType.ERROR);
+			return;
+		}
 
-        try {
-            StreamMapper stream = new StreamMapper();
-            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.PerformanceReviewObjects), true);
-            oos.writeObject(performanceReview);
-            oos.close();
+		if (teamworkRatingCombobox.getValue() == null) {
+			Utilities.showAlert("Please select a teamwork rating!", Alert.AlertType.ERROR);
+			return;
+		}
 
-            Utilities.showAlert("Successfully reviewed staff!", Alert.AlertType.INFORMATION);
+		if (punctualityRatingCombobox.getValue() == null) {
+			Utilities.showAlert("Please select a punctuality rating!", Alert.AlertType.ERROR);
+			return;
+		}
 
-//            feedbackTextArea.clear();
-//            staffIDCombobox.setValue(null);
-//            jobRatingCombobox.setValue(null);
-//            wokrQualityCombobox.setValue(null);
-//            teamworkRatingCombobox.setValue(null);
-//            punctualityRatingCombobox.setValue(null);
-//            staffRoleLabel.setText("Select ID to get role");
-        } catch(Exception e) {
-            Utilities.showAlert("Something went wrong! Please try again!", Alert.AlertType.ERROR);
-        }
-    }
+		if (wokrQualityCombobox.getValue() == null) {
+			Utilities.showAlert("Please select a work quality rating!", Alert.AlertType.ERROR);
+			return;
+		}
 
-    @javafx.fxml.FXML
-    public void onStaffIdComboboxSelect(ActionEvent actionEvent) {
-        int staffId = staffIDCombobox.getValue();
+		int staffId = staffIDCombobox.getValue();
+		String staffRole = staffRoleLabel.getText();
+		String feedback = feedbackTextArea.getText();
+		int jobRating = jobRatingCombobox.getValue();
+		int teamworkRating = teamworkRatingCombobox.getValue();
+		int workQualityRating = wokrQualityCombobox.getValue();
+		int punctualityRating = punctualityRatingCombobox.getValue();
 
-        Optional<StaffAccount> staffRole = staffAccountsList.stream()
-                .filter(obj -> obj.getUserId() == staffId)
-                .findFirst();
+		String staffName = selectedStaffAccount.getFullName();
 
-        selectedStaffAccount = staffRole.orElse(null);
-        staffRole.ifPresent(staffAccount -> staffRoleLabel.setText(staffAccount.getUserType()));
-    }
+		PerformanceReview performanceReview = new PerformanceReview(
+				staffId,
+				staffName,
+				staffRole,
+				jobRating,
+				teamworkRating,
+				punctualityRating,
+				workQualityRating,
+				feedback);
+
+		try {
+			StreamMapper stream = new StreamMapper();
+			ObjectOutputStream oos = getObjectOutputStream(
+					stream.getObjectStream(ObjectStreams.PerformanceReviewObjects), false);
+			oos.writeObject(performanceReview);
+			oos.close();
+
+			loadPerformanceReviews();
+
+			feedbackTextArea.clear();
+			staffIDCombobox.setValue(null);
+			jobRatingCombobox.setValue(null);
+			wokrQualityCombobox.setValue(null);
+			teamworkRatingCombobox.setValue(null);
+			punctualityRatingCombobox.setValue(null);
+			staffRoleLabel.setText("Select ID to get role");
+
+			Utilities.showAlert("Successfully reviewed staff!", Alert.AlertType.INFORMATION);
+		} catch (Exception e) {
+			Utilities.showAlert("Something went wrong! Please try again!", Alert.AlertType.ERROR);
+		}
+	}
+
+	@javafx.fxml.FXML
+	public void onStaffIdComboboxSelect(ActionEvent actionEvent) {
+		int staffId = staffIDCombobox.getValue();
+
+		Optional<StaffAccount> staffRole = staffAccountsList.stream()
+				.filter(obj -> obj.getUserId() == staffId)
+				.findFirst();
+
+		selectedStaffAccount = staffRole.orElse(null);
+		staffRole.ifPresent(staffAccount -> staffRoleLabel.setText(staffAccount.getUserType()));
+	}
 }

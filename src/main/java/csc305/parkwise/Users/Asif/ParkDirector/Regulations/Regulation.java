@@ -5,91 +5,108 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Regulation implements Serializable {
-    private String ruleSummary;
-    private String description;
-    private String regulationType;
-    private LocalDate effectiveDate;
-    private ArrayList<String> appliesTo = new ArrayList<>();
+	private String ruleSummary;
+	private String description;
+	private String regulationType;
+	private LocalDate effectiveDate;
+	private ArrayList<String> appliesTo = new ArrayList<>();
 
-    private String status;
-    private LocalDate createdAt;
+	private String status;
+	private LocalDate createdAt;
 
-    public String getStatus() {
-        return status;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
+	public LocalDate getCreatedAt() {
+		return createdAt;
+	}
 
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
+	public void setCreatedAt(LocalDate createdAt) {
+		this.createdAt = createdAt;
+	}
 
-    public Regulation(String ruleSummary, String description, String regulationType, LocalDate effectiveDate, ArrayList<String> appliesTo, String status, LocalDate createdAt) {
-        this.ruleSummary = ruleSummary;
-        this.description = description;
-        this.regulationType = regulationType;
-        this.effectiveDate = effectiveDate;
-        this.appliesTo = appliesTo;
-        this.status = status;
-        this.createdAt = createdAt;
-    }
+	public Regulation(String ruleSummary, String description, String regulationType, LocalDate effectiveDate,
+			ArrayList<String> appliesTo, String status, LocalDate createdAt) {
+		this.ruleSummary = ruleSummary;
+		this.description = description;
+		this.regulationType = regulationType;
+		this.effectiveDate = effectiveDate;
+		this.appliesTo = appliesTo;
+		this.status = status;
+		this.createdAt = createdAt;
+	}
 
-    public String getRuleSummary() {
-        return ruleSummary;
-    }
+	public String getRuleSummary() {
+		return ruleSummary;
+	}
 
-    public void setRuleSummary(String ruleSummary) {
-        this.ruleSummary = ruleSummary;
-    }
+	public void setRuleSummary(String ruleSummary) {
+		this.ruleSummary = ruleSummary;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public String getRegulationType() {
-        return regulationType;
-    }
+	public String getRegulationType() {
+		return regulationType;
+	}
 
-    public void setRegulationType(String regulationType) {
-        this.regulationType = regulationType;
-    }
+	public void setRegulationType(String regulationType) {
+		this.regulationType = regulationType;
+	}
 
-    public LocalDate getEffectiveDate() {
-        return effectiveDate;
-    }
+	public LocalDate getEffectiveDate() {
+		return effectiveDate;
+	}
 
-    public void setEffectiveDate(LocalDate effectiveDate) {
-        this.effectiveDate = effectiveDate;
-    }
+	public void setEffectiveDate(LocalDate effectiveDate) {
+		this.effectiveDate = effectiveDate;
+	}
 
-    public ArrayList<String> getAppliesTo() {
-        return appliesTo;
-    }
+	public ArrayList<String> getAppliesTo() {
+		return appliesTo;
+	}
 
-    public void setAppliesTo(ArrayList<String> appliesTo) {
-        this.appliesTo = appliesTo;
-    }
+	public void setAppliesTo(ArrayList<String> appliesTo) {
+		this.appliesTo = appliesTo;
+	}
 
-    @Override
-    public String toString() {
-        return "Regulation{" +
-                "ruleSummary='" + ruleSummary + '\'' +
-                ", description='" + description + '\'' +
-                ", regulationType='" + regulationType + '\'' +
-                ", effectiveDate=" + effectiveDate +
-                ", appliesTo=" + appliesTo +
-                ", status='" + status + '\'' +
-                ", createdAt=" + createdAt +
-                '}';
-    }
+	public static boolean isValidEffectiveDate(LocalDate effectiveDate) {
+		return effectiveDate != null && effectiveDate.isAfter(LocalDate.now());
+	}
+
+	public boolean isRegulationOutdated() {
+		return LocalDate.now().isAfter(effectiveDate.plusYears(1)); // Example: outdated if more than 1 year old
+	}
+
+	public boolean isForStaffProcedures() {
+		return regulationType.equalsIgnoreCase("Staff Procedures");
+	}
+
+	public boolean isForVisitorConduct() {
+		return regulationType.equalsIgnoreCase("Visitor Conduct");
+	}
+
+	@Override
+	public String toString() {
+		return "Regulation{" +
+				"ruleSummary='" + ruleSummary + '\'' +
+				", description='" + description + '\'' +
+				", regulationType='" + regulationType + '\'' +
+				", effectiveDate=" + effectiveDate +
+				", appliesTo=" + appliesTo +
+				", status='" + status + '\'' +
+				", createdAt=" + createdAt +
+				'}';
+	}
 }

@@ -1,5 +1,11 @@
 package csc305.parkwise.Users.Rifah.EducationalGroupLeader;
 
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
 public class Finalactivityreport
 {
     @javafx.fxml.FXML

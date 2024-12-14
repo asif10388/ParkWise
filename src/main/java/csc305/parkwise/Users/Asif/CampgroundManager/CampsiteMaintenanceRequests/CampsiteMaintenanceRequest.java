@@ -11,128 +11,121 @@ import java.time.LocalDate;
 import static csc305.parkwise.Common.Utils.Stream.ObjectStreamOperation.getObjectOutputStream;
 
 public class CampsiteMaintenanceRequest implements Serializable {
-    private int userId;
-    private int requestId;
-    private String status;
-    private int campsiteId;
-    private String priority;
-    private String description;
-    private String requestType;
-    private LocalDate requestDate;
-    private String decisionComments;
+	private int userId;
+	private int requestId;
+	private String status;
+	private int campsiteId;
+	private String priority;
+	private String description;
+	private String requestType;
+	private LocalDate requestDate;
+	private String decisionComments;
 
-    public CampsiteMaintenanceRequest(int userId, int requestId, String status, int campsiteId, String priority, String description, String requestType, LocalDate requestDate, String decisionComments) {
-        this.userId = userId;
-        this.requestId = requestId;
-        this.status = status;
-        this.campsiteId = campsiteId;
-        this.priority = priority;
-        this.description = description;
-        this.requestType = requestType;
-        this.requestDate = requestDate;
-        this.decisionComments = decisionComments;
-    }
+	public CampsiteMaintenanceRequest(int userId, int requestId, String status, int campsiteId, String priority,
+			String description, String requestType, LocalDate requestDate, String decisionComments) {
+		this.userId = userId;
+		this.requestId = requestId;
+		this.status = status;
+		this.campsiteId = campsiteId;
+		this.priority = priority;
+		this.description = description;
+		this.requestType = requestType;
+		this.requestDate = requestDate;
+		this.decisionComments = decisionComments;
+	}
 
+	public String getDecisionComments() {
+		return decisionComments;
+	}
 
-    public String getDecisionComments() {
-        return decisionComments;
-    }
+	public void setDecisionComments(String decisionComments) {
+		this.decisionComments = decisionComments;
+	}
 
-    public void setDecisionComments(String decisionComments) {
-        this.decisionComments = decisionComments;
-    }
+	public String getRequestType() {
+		return requestType;
+	}
 
-    public String getRequestType() {
-        return requestType;
-    }
+	public void setRequestType(String requestType) {
+		this.requestType = requestType;
+	}
 
-    public void setRequestType(String requestType) {
-        this.requestType = requestType;
-    }
+	public LocalDate getRequestDate() {
+		return requestDate;
+	}
 
-    public LocalDate getRequestDate() {
-        return requestDate;
-    }
+	public void setRequestDate(LocalDate requestDate) {
+		this.requestDate = requestDate;
+	}
 
-    public void setRequestDate(LocalDate requestDate) {
-        this.requestDate = requestDate;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	public int getUserId() {
+		return userId;
+	}
 
-    public int getUserId() {
-        return userId;
-    }
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+	public int getRequestId() {
+		return requestId;
+	}
 
-    public int getRequestId() {
-        return requestId;
-    }
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
+	}
 
-    public void setRequestId(int requestId) {
-        this.requestId = requestId;
-    }
+	public int getCampsiteId() {
+		return campsiteId;
+	}
 
-    public int getCampsiteId() {
-        return campsiteId;
-    }
+	public void setCampsiteId(int campsiteId) {
+		this.campsiteId = campsiteId;
+	}
 
-    public void setCampsiteId(int campsiteId) {
-        this.campsiteId = campsiteId;
-    }
+	public String getPriority() {
+		return priority;
+	}
 
-    public String getPriority() {
-        return priority;
-    }
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
 
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public boolean isHighPriority() {
+		return "High".equalsIgnoreCase(priority);
+	}
 
-    public boolean submitMaintenanceRequest() {
-        try {
-            StreamMapper stream = new StreamMapper();
-            ObjectOutputStream oos = getObjectOutputStream(stream.getObjectStream(ObjectStreams.CampgroundMaintenanceRequestObjects), false);
-            oos.writeObject(this);
-            oos.close();
+	public boolean isOverdue(int daysThreshold) {
+		return LocalDate.now().isAfter(requestDate.plusDays(daysThreshold));
+	}
 
-
-            return true;
-        } catch (IOException e) {
-
-            return false;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "CampsiteMaintenanceRequest{" +
-                "userId=" + userId +
-                ", requestId=" + requestId +
-                ", status='" + status + '\'' +
-                ", campsiteId=" + campsiteId +
-                ", priority='" + priority + '\'' +
-                ", description='" + description + '\'' +
-                ", requestType='" + requestType + '\'' +
-                ", requestDate=" + requestDate +
-                ", decisionComments='" + decisionComments + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "CampsiteMaintenanceRequest{" +
+				"userId=" + userId +
+				", requestId=" + requestId +
+				", status='" + status + '\'' +
+				", campsiteId=" + campsiteId +
+				", priority='" + priority + '\'' +
+				", description='" + description + '\'' +
+				", requestType='" + requestType + '\'' +
+				", requestDate=" + requestDate +
+				", decisionComments='" + decisionComments + '\'' +
+				'}';
+	}
 }
